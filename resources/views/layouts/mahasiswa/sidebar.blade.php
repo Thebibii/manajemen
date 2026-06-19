@@ -77,7 +77,7 @@
     <!-- Logout -->
     <form method="POST" action="{{ route('logout') }}">
         @csrf
-        <a href="{{ route('logout') }}"
+        <button type="submit"
             class="w-full flex items-center justify-center gap-2 rounded-xl bg-error-50 text-error-600 py-3 font-medium hover:bg-error-100 transition-colors">
 
             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 scale-x-[-1]" fill="none" viewBox="0 0 24 24"
@@ -94,7 +94,7 @@
 
             Keluar
 
-        </a>
+        </button>
     </form>
 
 </div>
