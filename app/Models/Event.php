@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+// app/Models/Event.php
+class Event extends Model
+{
+    protected $fillable = ['user_id', 'nama', 'deskripsi', 'tanggal', 'lokasi', 'kuota'];
+
+    protected $casts = ['tanggal' => 'datetime'];
+
+    public function panitia()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function registrations()
+    {
+        return $this->hasMany(Registration::class);
+    }
+
+    public function jumlahDiterima(): int
+    {
+        return $this->registrations()->where('status', 'diterima')->count();
+    }
+
+    public function sisaKuota(): int
+    {
+        return max(0, $this->kuota - $this->jumlahDiterima());
+    }
+}
