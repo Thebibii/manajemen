@@ -58,18 +58,20 @@
                     <ul class="space-y-3">
 
                         <li>
-                            <a href="/" class="text-brand-100 hover:text-white transition-colors duration-300">
+                            <a href="{{ route('welcome') }}"
+                                class="text-brand-100 hover:text-white transition-colors duration-300">
                                 Beranda
                             </a>
                         </li>
 
                         <li>
-                            <a href="/explore" class="text-brand-100 hover:text-white transition-colors duration-300">
+                            <a href="{{ route('explore') }}"
+                                class="text-brand-100 hover:text-white transition-colors duration-300">
                                 Explore
                             </a>
                         </li>
 
-                        <li>
+                        {{-- <li>
                             <a href="/about" class="text-brand-100 hover:text-white transition-colors duration-300">
                                 Tentang
                             </a>
@@ -80,7 +82,7 @@
                                 class="text-brand-100 hover:text-white transition-colors duration-300">
                                 Hubungi Kami
                             </a>
-                        </li>
+                        </li> --}}
 
                     </ul>
 

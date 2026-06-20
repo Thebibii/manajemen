@@ -39,7 +39,7 @@
                                 </p>
 
                                 <p class="font-semibold text-gray-900">
-                                    NOISE FESTIVAL 2024
+                                    {{ $event->nama }}
                                 </p>
                             </div>
 
@@ -49,11 +49,7 @@
                                 </p>
 
                                 <p class="font-semibold text-gray-900">
-                                    Istora Senayan
-                                </p>
-
-                                <p class="text-sm text-gray-500">
-                                    Jakarta
+                                    {{ $event->lokasi }}
                                 </p>
                             </div>
 
@@ -63,11 +59,11 @@
                                 </p>
 
                                 <p class="font-semibold text-gray-900">
-                                    Jumat, 15 Maret 2024
+                                    {{ $event->tanggal->translatedFormat('l, d F Y') }}
                                 </p>
 
                                 <p class="text-sm text-gray-500">
-                                    18:00 WIB
+                                    {{ $event->tanggal->translatedFormat('H:i') }} WIB
                                 </p>
                             </div>
 
