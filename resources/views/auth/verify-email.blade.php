@@ -39,8 +39,8 @@
             <!-- Content -->
             <div class="flex w-full flex-1 flex-col lg:w-1/2">
                 <div class="mx-auto w-full max-w-md pt-10">
-                    <a href="{{ url('/') }}"
-                        class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+                    <a href="{{ route('welcome') }}"
+                        class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700">
                         <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             viewBox="0 0 20 20" fill="none">
                             <path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="currentColor" stroke-width="1.5"
@@ -52,11 +52,11 @@
 
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
                     <div class="mb-5 sm:mb-8">
-                        <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800 dark:text-white/90">
+                        <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800">
                             Verifikasi Email Anda
                         </h1>
 
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                        <p class="text-sm text-gray-500">
                             Kami telah mengirimkan tautan verifikasi ke alamat email Anda.
                             Silakan buka email tersebut dan klik tombol verifikasi untuk
                             mengaktifkan akun Anda.
@@ -64,8 +64,7 @@
                     </div>
 
                     @if (session('status') === 'verification-link-sent')
-                        <div
-                            class="mb-5 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700 dark:border-green-800 dark:bg-green-900/20 dark:text-green-400">
+                        <div class="mb-5 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
                             Tautan verifikasi baru telah berhasil dikirim ke alamat email Anda.
                         </div>
                     @endif
@@ -73,12 +72,12 @@
                     <div class="space-y-5">
 
                         <!-- Email Information -->
-                        <div class="rounded-lg border border-gray-200 bg-gray-50 p-4 dark:border-gray-700 dark:bg-gray-800">
-                            <p class="text-sm text-gray-500 dark:text-gray-400">
+                        <div class="rounded-lg border border-gray-200 bg-gray-50 p-4">
+                            <p class="text-sm text-gray-500">
                                 Email verifikasi dikirim ke:
                             </p>
 
-                            <p class="mt-1 font-medium text-gray-800 dark:text-white">
+                            <p class="mt-1 font-medium text-gray-800">
                                 {{ auth()->user()->email }}
                             </p>
                         </div>
@@ -98,7 +97,7 @@
                             @csrf
 
                             <button type="submit"
-                                class="dark:bg-dark-900 shadow-theme-xs hover:bg-gray-100 dark:hover:bg-dark-800 flex w-full items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition dark:border-gray-700 dark:text-gray-300">
+                                class="shadow-theme-xs hover:bg-gray-100 flex w-full items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition">
                                 Keluar dari Akun
                             </button>
                         </form>
@@ -106,7 +105,7 @@
                     </div>
 
                     <div class="mt-5">
-                        <p class="text-center text-sm text-gray-500 dark:text-gray-400">
+                        <p class="text-center text-sm text-gray-500">
                             Tidak menemukan email?
                             Periksa folder <span class="font-medium">Spam</span> atau
                             <span class="font-medium">Promosi</span>.

@@ -33,7 +33,7 @@
             <div class="flex w-full flex-1 flex-col lg:w-1/2">
                 <div class="mx-auto w-full max-w-md pt-10">
                     <a href="{{ route('login') }}"
-                        class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+                        class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700  ">
                         <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             viewBox="0 0 20 20" fill="none">
                             <path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="currentColor" stroke-width="1.5"
@@ -45,10 +45,10 @@
 
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
                     <div class="mb-5 sm:mb-8">
-                        <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800 dark:text-white/90">
+                        <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800">
                             Forgot Your Password?
                         </h1>
-                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                        <p class="text-sm text-gray-500 ">
                             Enter the email address linked to your account, and we'll send
                             you a link to reset your password.
                         </p>
@@ -68,13 +68,13 @@
                             <div class="space-y-5">
                                 {{-- Email --}}
                                 <div>
-                                    <label class="mb-1.5 block text-sm font-medium text-gray-700 dark:text-gray-400">
+                                    <label class="mb-1.5 block text-sm font-medium text-gray-700 ">
                                         Email <span class="text-error-500">*</span>
                                     </label>
 
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
                                         placeholder="Enter your email" required autofocus
-                                        class="dark:bg-dark-900 font-normal shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 dark:focus:border-brand-800 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden dark:border-gray-700 dark:text-white/90 dark:placeholder:text-white/30">
+                                        class=" font-normal shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden">
 
                                     @error('email')
                                         <p class="mt-2 text-sm text-error-500">
@@ -94,10 +94,9 @@
                         </form>
 
                         <div class="mt-5">
-                            <p class="text-center text-sm font-normal text-gray-700 sm:text-start dark:text-gray-400">
+                            <p class="text-center text-sm font-normal text-gray-700 sm:text-start ">
                                 Wait, I remember my password...
-                                <a href="{{ route('login') }}"
-                                    class="text-brand-500 hover:text-brand-600 dark:text-brand-400">
+                                <a href="{{ route('login') }}" class="text-brand-500 hover:text-brand-600">
                                     Login
                                 </a>
                             </p>

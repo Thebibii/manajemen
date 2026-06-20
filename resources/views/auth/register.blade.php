@@ -89,7 +89,7 @@
                                     </label>
                                     <input type="text" id="name" name="name" value="{{ old('name') }}"
                                         autofocus autocomplete="name" placeholder="Enter your name"
-                                        class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
+                                        class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                 </div>
                                 <!-- Email -->
@@ -99,7 +99,7 @@
                                     </label>
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
                                         autocomplete="username" placeholder="Enter your email"
-                                        class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
+                                        class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
                                 <!-- Password -->
@@ -110,7 +110,7 @@
                                     <div x-data="{ showPassword: false }" class="relative">
                                         <input :type="showPassword ? 'text' : 'password'" id="password" name="password"
                                             autocomplete="new-password" placeholder="Enter your password"
-                                            class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
+                                            class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                         <span @click="showPassword = !showPassword"
                                             class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer text-gray-500">
                                             <svg x-show="!showPassword" class="fill-current" width="20" height="20"
@@ -139,7 +139,7 @@
                                         <input :type="showPasswordConfirmation ? 'text' : 'password'"
                                             id="password_confirmation" name="password_confirmation"
                                             autocomplete="new-password" placeholder="Re-enter your password"
-                                            class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
+                                            class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                         <span @click="showPasswordConfirmation = !showPasswordConfirmation"
                                             class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer text-gray-500">
                                             <svg x-show="!showPasswordConfirmation" class="fill-current" width="20"
