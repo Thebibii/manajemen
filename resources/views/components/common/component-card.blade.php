@@ -8,7 +8,7 @@
                 {{ $title }}
             </h3>
             @if ($desc)
-                <p class="mt-1 text-base text-gray-500">
+                <p class=" text-gray-500">
                     {{ $desc }}
                 </p>
             @endif
@@ -24,7 +24,7 @@
 
     <!-- Card Body -->
     <div class="p-4 border-t border-gray-100 sm:p-6">
-        <div class="space-y-6">
+        <div class="">
             {{ $slot }}
         </div>
     </div>

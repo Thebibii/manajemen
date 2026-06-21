@@ -35,7 +35,7 @@ class ProfileController extends Controller
         $request->user()->save();
 
         // Periksa role pengguna dan arahkan ke route yang sesuai
-        if ($request->user()->role === 'admin') {
+        if ($request->user()->isPanitia()) {
             return Redirect::route('profile.edit')->with('status', 'profile-updated');
         }
 

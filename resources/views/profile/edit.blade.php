@@ -1,47 +1,11 @@
-{{-- <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Profile') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-profile-information-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.update-password-form')
-                </div>
-            </div>
-
-            <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
-                <div class="max-w-xl">
-                    @include('profile.partials.delete-user-form')
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout> --}}
 @extends('layouts.app')
 
 @section('content')
     <x-common.page-breadcrumb pageTitle="User Profile" />
-    <div>
+    <div class="space-y-6">
         <!-- Profile Information -->
-        <div class="mb-6 rounded-2xl border border-gray-200 p-5 lg:p-6">
-            <div class="mb-5">
-                <h4 class="text-lg font-semibold text-gray-800">
-                    Profile Information
-                </h4>
-                <p class="mt-1 text-sm text-gray-500">
-                    Update your account's profile information and email address.
-                </p>
-            </div>
+        <x-common.component-card title="Profile Information"
+            desc="Update your account's profile information and email address.">
 
             <form id="send-verification" method="POST" action="{{ route('verification.send') }}">
                 @csrf
@@ -91,10 +55,13 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <button type="submit"
+                    <x-ui.button type="submit">
+                        {{ __('Save') }}
+                    </x-ui.button>
+                    {{-- <button type="submit"
                         class="bg-brand-500 shadow-theme-xs hover:bg-brand-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
                         {{ __('Save') }}
-                    </button>
+                    </button> --}}
 
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
@@ -104,19 +71,11 @@
                     @endif
                 </div>
             </form>
-        </div>
+        </x-common.component-card>
 
         <!-- Update Password -->
-        <div class="mb-6 rounded-2xl border border-gray-200 p-5 lg:p-6">
-            <div class="mb-5">
-                <h4 class="text-lg font-semibold text-gray-800">
-                    Update Password
-                </h4>
-                <p class="mt-1 text-sm text-gray-500">
-                    Ensure your account is using a long, random password to stay secure.
-                </p>
-            </div>
-
+        <x-common.component-card title="Update Password"
+            desc="Ensure your account is using a long, random password to stay secure.">
             <form method="POST" action="{{ route('password.update') }}" class="space-y-5">
                 @csrf
                 @method('PUT')
@@ -207,10 +166,9 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <button type="submit"
-                        class="bg-brand-500 shadow-theme-xs hover:bg-brand-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
+                    <x-ui.button type="submit">
                         {{ __('Save') }}
-                    </button>
+                    </x-ui.button>
 
                     @if (session('status') === 'password-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
@@ -220,10 +178,11 @@
                     @endif
                 </div>
             </form>
-        </div>
+        </x-common.component-card>
+        {{-- </div> --}}
 
         <!-- Delete Account -->
-        <div class="rounded-2xl border border-gray-200 p-5 lg:p-6">
+        {{-- <div class="rounded-2xl border border-gray-200 p-5 lg:p-6">
             <div class="mb-5">
                 <h4 class="text-lg font-semibold text-gray-800">
                     Delete Account
@@ -232,47 +191,50 @@
                     Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting
                     your account, please download any data or information that you wish to retain.
                 </p>
-            </div>
-
+            </div> --}}
+        <x-common.component-card title="Delete Account"
+            desc="Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting
+                    your account, please download any data or information that you wish to retain.">
             <button x-data="" @click.prevent="$dispatch('open-confirm-user-deletion-modal')" type="button"
                 class="bg-error-500 shadow-theme-xs hover:bg-error-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
                 {{ __('Delete Account') }}
             </button>
+        </x-common.component-card>
 
-            <x-ui.modal x-data="{ open: {{ $errors->userDeletion->isNotEmpty() ? 'true' : 'false' }} }" @open-confirm-user-deletion-modal.window="open = true" :isOpen="false"
-                class="max-w-md">
-                <div class="relative w-full max-w-md rounded-3xl bg-white p-6 lg:p-8">
-                    <h4 class="mb-2 text-lg font-semibold text-gray-800">
-                        {{ __('Are you sure you want to delete your account?') }}
-                    </h4>
-                    <p class="mb-6 text-sm text-gray-500">
-                        {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
-                    </p>
+        <x-ui.modal x-data="{ open: {{ $errors->userDeletion->isNotEmpty() ? 'true' : 'false' }} }" @open-confirm-user-deletion-modal.window="open = true" :isOpen="false"
+            class="max-w-md">
+            <div class="relative w-full max-w-md rounded-3xl bg-white p-6 lg:p-8">
+                <h4 class="mb-2 text-lg font-semibold text-gray-800">
+                    {{ __('Are you sure you want to delete your account?') }}
+                </h4>
+                <p class="mb-6 text-sm text-gray-500">
+                    {{ __('Once your account is deleted, all of its resources and data will be permanently deleted. Please enter your password to confirm you would like to permanently delete your account.') }}
+                </p>
 
-                    <form method="POST" action="{{ route('profile.destroy') }}">
-                        @csrf
-                        @method('DELETE')
+                <form method="POST" action="{{ route('profile.destroy') }}">
+                    @csrf
+                    @method('DELETE')
 
-                        <div>
-                            <label for="delete_password" class="sr-only">Password</label>
-                            <input type="password" id="delete_password" name="password" placeholder="Password"
-                                class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-3/4 rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
-                            <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
-                        </div>
+                    <div>
+                        <label for="delete_password" class="sr-only">Password</label>
+                        <input type="password" id="delete_password" name="password" placeholder="Password"
+                            class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-3/4 rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
+                        <x-input-error :messages="$errors->userDeletion->get('password')" class="mt-2" />
+                    </div>
 
-                        <div class="mt-6 flex items-center justify-end gap-3">
-                            <button @click="open = false" type="button"
-                                class="rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50">
-                                {{ __('Cancel') }}
-                            </button>
-                            <button type="submit"
-                                class="bg-error-500 hover:bg-error-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
-                                {{ __('Delete Account') }}
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </x-ui.modal>
-        </div>
+                    <div class="mt-6 flex items-center justify-end gap-3">
+                        <button @click="open = false" type="button"
+                            class="rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            {{ __('Cancel') }}
+                        </button>
+                        <button type="submit"
+                            class="bg-error-500 hover:bg-error-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
+                            {{ __('Delete Account') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </x-ui.modal>
+    </div>
     </div>
 @endsection

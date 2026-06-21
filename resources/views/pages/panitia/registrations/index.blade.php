@@ -54,35 +54,84 @@
                     class="flex flex-col gap-3 sm:flex-row sm:items-center">
 
                     <div class="relative">
-                        <button type="submit" class="absolute left-4 top-1/2 -translate-y-1/2">
-                            <svg class="fill-gray-500" width="20" height="20" viewBox="0 0 20 20">
+                        <button type="submit" class="absolute -translate-y-1/2 left-4 top-1/2">
+                            <svg class="fill-gray-500" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M3.04199 9.37381C3.04199 5.87712 5.87735 3.04218 9.37533 3.04218C12.8733 3.04218 15.7087 5.87712 15.7087 9.37381C15.7087 12.8705 12.8733 15.7055 9.37533 15.7055C5.87735 15.7055 3.04199 12.8705 3.04199 9.37381Z" />
+                                    d="M3.04199 9.37381C3.04199 5.87712 5.87735 3.04218 9.37533 3.04218C12.8733 3.04218 15.7087 5.87712 15.7087 9.37381C15.7087 12.8705 12.8733 15.7055 9.37533 15.7055C5.87735 15.7055 3.04199 12.8705 3.04199 9.37381ZM9.37533 1.54218C5.04926 1.54218 1.54199 5.04835 1.54199 9.37381C1.54199 13.6993 5.04926 17.2055 9.37533 17.2055C11.2676 17.2055 13.0032 16.5346 14.3572 15.4178L17.1773 18.2381C17.4702 18.531 17.945 18.5311 18.2379 18.2382C18.5308 17.9453 18.5309 17.4704 18.238 17.1775L15.4182 14.3575C16.5367 13.0035 17.2087 11.2671 17.2087 9.37381C17.2087 5.04835 13.7014 1.54218 9.37533 1.54218Z"
+                                    fill="" />
                             </svg>
                         </button>
 
                         <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari peserta..."
-                            class="h-[42px] w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pl-[42px] pr-4 text-sm xl:w-[280px]" />
+                            class="h-[42px] w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pl-[42px] pr-4 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring-3 focus:ring-brand-500/10 xl:w-[300px]" />
                     </div>
 
-                    <select name="event_id" onchange="this.form.submit()"
-                        class="h-[42px] rounded-lg border border-gray-300 px-4 text-sm">
-                        <option value="">Semua Event</option>
+                    <div x-data="{
+                        selectedEvent: '{{ request('event_id', '') }}',
+                        get isOptionSelected() { return this.selectedEvent !== ''; }
+                    }" class="w-fit">
+                        <div class="relative z-20 bg-transparent">
+                            <select x-model="selectedEvent" name="event_id" @change="$el.form.submit()"
+                                class="shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] w-fit appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
+                                :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'">
 
-                        @foreach ($events as $event)
-                            <option value="{{ $event->id }}" @selected(request('event_id') == $event->id)>
-                                {{ $event->nama }}
-                            </option>
-                        @endforeach
-                    </select>
+                                <option value="" class="text-gray-400">
+                                    Semua Event
+                                </option>
 
-                    <select name="status" onchange="this.form.submit()"
-                        class="h-[42px] rounded-lg border border-gray-300 px-4 text-sm">
-                        <option value="">Semua Status</option>
-                        <option value="pending" @selected(request('status') == 'pending')>Pending</option>
-                        <option value="diterima" @selected(request('status') == 'diterima')>Diterima</option>
-                        <option value="ditolak" @selected(request('status') == 'ditolak')>Ditolak</option>
-                    </select>
+                                @foreach ($events as $event)
+                                    <option value="{{ $event->id }}" class="text-gray-700">
+                                        {{ $event->nama }}
+                                    </option>
+                                @endforeach
+                            </select>
+
+                            <span class="pointer-events-none absolute top-1/2 right-4 z-30 -translate-y-1/2 text-gray-700">
+                                <svg class="stroke-current" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div x-data="{
+                        selectedStatus: '{{ request('status', '') }}',
+                        get isOptionSelected() { return this.selectedStatus !== ''; }
+                    }" class="w-fit">
+                        <div class="relative z-20 bg-transparent">
+                            <select x-model="selectedStatus" name="status" @change="$el.form.submit()"
+                                class="shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] w-fit appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
+                                :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'">
+
+                                <option value="" class="text-gray-400">
+                                    Semua Status
+                                </option>
+
+                                <option value="pending" class="text-gray-700">
+                                    Pending
+                                </option>
+
+                                <option value="diterima" class="text-gray-700">
+                                    Diterima
+                                </option>
+
+                                <option value="ditolak" class="text-gray-700">
+                                    Ditolak
+                                </option>
+                            </select>
+
+                            <span class="pointer-events-none absolute top-1/2 right-4 z-30 -translate-y-1/2 text-gray-700">
+                                <svg class="stroke-current" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
                 </form>
             </div>
 

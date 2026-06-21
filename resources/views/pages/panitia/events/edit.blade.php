@@ -3,7 +3,8 @@
 @section('content')
     <x-common.page-breadcrumb pageTitle="Form Elements" />
     <x-common.component-card title="Edit Event">
-        <form action="{{ route('panitia.events.update', $event->id) }}" method="POST" class="space-y-5">
+        <form action="{{ route('panitia.events.update', $event->id) }}" method="POST" class="space-y-5"
+            enctype="multipart/form-data">
             @csrf
             @method('PUT')
 
@@ -69,6 +70,36 @@
                 @error('kuota')
                     <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span>
                 @enderror
+            </div>
+
+            <div x-data="{
+                preview: '{{ $event->gambar ? Storage::url($event->gambar) : '' }}'
+            }">
+                <label for="gambar" class="mb-1.5 block text-sm font-medium text-gray-700">
+                    Gambar Event
+                </label>
+
+                <input type="file" name="gambar" id="gambar" accept="image/*"
+                    @change="preview = URL.createObjectURL($event.target.files[0])"
+                    class="focus:border-ring-brand-300 shadow-theme-xs h-11 w-full overflow-hidden rounded-lg border border-gray-300 bg-transparent text-sm text-gray-500 transition-colors file:mr-5 file:cursor-pointer file:rounded-l-lg file:border-0 file:border-r file:border-gray-200 file:bg-gray-50 file:px-3.5 file:py-3 file:text-sm file:text-gray-700">
+
+                <div class="mt-3 w-full md:w-1/2">
+                    <div class="aspect-video overflow-hidden rounded-lg border border-gray-200">
+                        <template x-if="preview">
+                            <img :src="preview" alt="Preview" class="h-full w-full object-cover">
+                        </template>
+
+                        <template x-if="!preview">
+                            <div class="flex h-full items-center justify-center bg-gray-50 text-sm text-gray-500">
+                                Belum ada gambar
+                            </div>
+                        </template>
+                    </div>
+                </div>
+
+                <p class="mt-2 text-xs text-gray-500">
+                    Kosongkan jika tidak ingin mengganti gambar.
+                </p>
             </div>
 
             <!-- Tombol Submit -->

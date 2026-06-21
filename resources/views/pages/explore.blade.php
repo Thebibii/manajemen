@@ -117,12 +117,20 @@
 
                                         <div class="flex items-center gap-2 text-sm text-gray-600">
 
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-500"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-calendar-days-icon lucide-calendar-days w-4 h-4 text-brand-500">
+                                                <path d="M8 2v4" />
+                                                <path d="M16 2v4" />
+                                                <rect width="18" height="18" x="3" y="4" rx="2" />
+                                                <path d="M3 10h18" />
+                                                <path d="M8 14h.01" />
+                                                <path d="M12 14h.01" />
+                                                <path d="M16 14h.01" />
+                                                <path d="M8 18h.01" />
+                                                <path d="M12 18h.01" />
+                                                <path d="M16 18h.01" />
                                             </svg>
 
                                             <span>{{ $event->tanggal->translatedFormat('d M Y • H:i') }}</span>
@@ -131,15 +139,13 @@
 
                                         <div class="flex items-center gap-2 text-sm text-gray-600">
 
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-500"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z" />
-
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-map-pin-icon lucide-map-pin w-4 h-4 text-brand-500">
+                                                <path
+                                                    d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
+                                                <circle cx="12" cy="10" r="3" />
                                             </svg>
 
                                             <span class="truncate">
@@ -150,12 +156,14 @@
 
                                         <div class="flex items-center gap-2 text-sm text-gray-600">
 
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-500"
-                                                fill="none" viewBox="0 0 24 24" stroke="currentColor">
-
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                    d="M17 20h5v-2a4 4 0 00-3-3.87M9 20H4v-2a4 4 0 013-3.87m6-1.13a4 4 0 10-4-4 4 4 0 004 4zm6 0a4 4 0 10-4-4" />
-
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide lucide-users-icon lucide-users w-4 h-4 text-brand-500">
+                                                <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                                <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+                                                <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                                <circle cx="9" cy="7" r="4" />
                                             </svg>
 
                                             <span>

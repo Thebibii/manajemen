@@ -13,7 +13,7 @@
 
     // Size map
     $sizeMap = [
-        'sm' => 'px-4 py-3 text-sm',
+        'sm' => 'px-4 py-[8px] text-sm',
         'md' => 'px-5 py-3.5 text-sm',
     ];
     $sizeClass = $sizeMap[$size] ?? $sizeMap['md'];

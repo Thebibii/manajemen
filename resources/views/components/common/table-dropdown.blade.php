@@ -4,7 +4,7 @@
     init() {
         this.$nextTick(() => {
             this.popperInstance = createPopper(this.$refs.button, this.$refs.content, {
-                placement: 'bottom-start',
+                placement: 'bottom-end',
                 strategy: 'fixed',
                 modifiers: [{
                     name: 'offset',

@@ -15,9 +15,10 @@ class DashboardController extends Controller
         $totalPending = Registration::where('status', 'pending')->count();
         $totalDiterima = Registration::where('status', 'diterima')->count();
 
-        $registrasiPerEvent = Event::withCount('registrations')
+        $registrasiPerEvent = Event::has('registrations')
+            ->withCount('registrations')
             ->orderBy('registrations_count', 'desc')
-            ->take(7)
+            ->take(5)
             ->get(['id', 'nama']);
 
         $eventLabels = $registrasiPerEvent->pluck('nama');
@@ -25,7 +26,6 @@ class DashboardController extends Controller
 
         $totalDitolak = Registration::where('status', 'ditolak')->count();
 
-        // update compact(), tambah $totalDitolak
         return view('pages.dashboard', compact(
             'totalEvents',
             'totalPendaftar',

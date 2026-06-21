@@ -5,7 +5,7 @@
     <x-common.component-card title="Daftar Event" desc="a">
         <x-slot:action>
             <a href="{{ route('panitia.events.create') }}">
-                <x-ui.button className="py-[8px]" variant="primary">Tambah form</x-ui.button>
+                <x-ui.button variant="primary">Tambah form</x-ui.button>
             </a>
         </x-slot:action>
         @if (session('success'))

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Event;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EventController extends Controller
 {
@@ -55,7 +56,13 @@ class EventController extends Controller
             'tanggal' => 'required|date',
             'lokasi' => 'required|string|max:255',
             'kuota' => 'required|integer|min:1',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('gambar')) {
+            $data['gambar'] = $request->file('gambar')->store('events', 'public');
+        }
+
 
         $data['user_id'] = auth()->id();
         Event::create($data);
@@ -79,7 +86,19 @@ class EventController extends Controller
             'tanggal' => 'required|date',
             'lokasi' => 'required|string|max:255',
             'kuota' => 'required|integer|min:1',
+            'gambar' => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
         ]);
+
+        if ($request->hasFile('gambar')) {
+
+            // Hapus gambar lama
+            if ($event->gambar && Storage::disk('public')->exists($event->gambar)) {
+                Storage::disk('public')->delete($event->gambar);
+            }
+
+            // Simpan gambar baru
+            $data['gambar'] = $request->file('gambar')->store('events', 'public');
+        }
 
         $event->update($data);
 

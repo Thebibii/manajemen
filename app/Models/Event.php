@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 // app/Models/Event.php
 class Event extends Model
 {
-    protected $fillable = ['user_id', 'nama', 'deskripsi', 'tanggal', 'lokasi', 'kuota'];
+    protected $fillable = ['user_id', 'nama', 'deskripsi', 'tanggal', 'lokasi', 'kuota', 'gambar'];
 
     protected $casts = ['tanggal' => 'datetime'];
 
