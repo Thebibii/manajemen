@@ -9,6 +9,8 @@ class Registration extends Model
 {
     protected $fillable = ['event_id', 'user_id', 'status', 'ticket_code'];
 
+    protected $casts = ['event_id' => 'integer', 'user_id' => 'integer'];
+
     public function event()
     {
         return $this->belongsTo(Event::class);

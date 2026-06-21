@@ -122,7 +122,6 @@ class RegistrationController extends Controller
 
     public function updateStatus(Request $request, Registration $registration)
     {
-        dd($registration->event->user_id, auth()->id());
         abort_if($registration->event->user_id !== auth()->id(), 403);
 
         $request->validate(['status' => 'required|in:diterima,ditolak,pending']);
