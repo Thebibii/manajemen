@@ -9,7 +9,9 @@ class Event extends Model
 {
     protected $fillable = ['user_id', 'nama', 'deskripsi', 'tanggal', 'lokasi', 'kuota', 'gambar'];
 
-    protected $casts = ['tanggal' => 'datetime'];
+
+    protected $casts = ['tanggal' => 'datetime', 'user_id' => 'integer', 'kuota' => 'integer'];
+
 
     public function panitia()
     {
