@@ -69,13 +69,21 @@
         :class="(!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen) ?
         'xl:justify-center' :
         'justify-start'">
-        <a href="/">
-            <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
+        <a href="{{ route('welcome') }}">
+            {{-- <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
                 class="dark:hidden" src="/images/logo/logo.svg" alt="Logo" width="150" height="40" />
             <img x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
                 class="hidden" src="/images/logo/logo-dark.svg" alt="Logo" width="150" height="40" />
             <img x-show="!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen"
-                src="/images/logo/logo-icon.svg" alt="Logo" width="32" height="32" />
+                src="/images/logo/logo-icon.svg" alt="Logo" width="32" height="32" /> --}}
+            <div x-show="$store.sidebar.isExpanded || $store.sidebar.isHovered || $store.sidebar.isMobileOpen"
+                class="text-xl font-bold text-slate-800 dark:text-white white-space-nowrap">
+                Event Kampus
+            </div>
+            <div x-show="!$store.sidebar.isExpanded && !$store.sidebar.isHovered && !$store.sidebar.isMobileOpen"
+                class="text-xl font-bold text-indigo-600 dark:text-indigo-400 text-center w-full">
+                EK
+            </div>
 
         </a>
     </div>

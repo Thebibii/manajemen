@@ -103,8 +103,8 @@ Route::get('/videos', function () {
 })->name('videos');
 
 Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('role:panitia');
 
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('role:panitia');
     Route::middleware('role:panitia')->group(function () {
         Route::get('/profile', [\App\Http\Controllers\ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');

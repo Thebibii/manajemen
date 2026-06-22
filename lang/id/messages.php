@@ -20,9 +20,9 @@ return [
     "Beranda" => "Beranda",
     "Explore" => "Jelajah",
     "Kontak" => "Kontak",
-    
+
     "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
-    
+
     "Kebijakan Privasi" => "Kebijakan Privasi",
     "Syarat & Ketentuan" => "Syarat & Ketentuan",
     "Semua hak dilindungi." => "Semua hak dilindungi.",
@@ -39,7 +39,7 @@ return [
     "Event Terdekat" => "Event Terdekat",
     "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat." => "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat.",
     "Lihat Semua" => "Lihat Semua",
-    
+
     "Coming Soon" => "Segera Hadir",
     "Deskripsi" => "Deskripsi",
     "Tanggal" => "Tanggal",
@@ -90,5 +90,5 @@ return [
     "Informasi Profil" => "Informasi Profil",
     "Perbarui nama dan alamat email akun Anda." => "Perbarui nama dan alamat email akun Anda.",
     "Simpan Perubahan" => "Simpan Perubahan",
-
+    'Keluar' => 'Keluar'
 ];

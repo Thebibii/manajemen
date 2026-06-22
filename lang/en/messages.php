@@ -89,4 +89,5 @@ return [
     "Informasi Profil" => "Profile Information",
     "Perbarui nama dan alamat email akun Anda." => "Update your account name and email address.",
     "Simpan Perubahan" => "Save Changes",
+    'Keluar' => 'Sign Out'
 ];

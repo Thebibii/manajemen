@@ -41,7 +41,7 @@
                     </a>
 
                     <p class="max-w-md text-brand-100 leading-6 sm:leading-7">
-                        {{__('messages.home_tp')}}
+                        {{ __('messages.home_tp') }}
                     </p>
 
                 </div>
@@ -50,7 +50,7 @@
                 <div>
 
                     <h4 class="text-sm font-semibold uppercase tracking-wider text-brand-100 mb-5">
-                        {{__('messages.Navigasi')}}
+                        {{ __('messages.Navigasi') }}
                     </h4>
 
                     <ul class="space-y-3">
@@ -58,14 +58,14 @@
                         <li>
                             <a href="{{ route('welcome') }}"
                                 class="text-brand-100 hover:text-white transition-colors duration-300">
-                                {{__('messages.Beranda')}}
+                                {{ __('messages.Beranda') }}
                             </a>
                         </li>
 
                         <li>
                             <a href="{{ route('explore') }}"
                                 class="text-brand-100 hover:text-white transition-colors duration-300">
-                                {{__('messages.Explore')}}
+                                {{ __('messages.Explore') }}
                             </a>
                         </li>
 
@@ -90,7 +90,7 @@
                 <div>
 
                     <h4 class="text-sm font-semibold uppercase tracking-wider text-brand-100 mb-5">
-                        {{__('messages.Kontak')}}
+                        {{ __('messages.Kontak') }}
                     </h4>
 
                     <ul class="space-y-3">
@@ -121,20 +121,9 @@
                 <div class="flex flex-col md:flex-row items-center justify-between gap-4">
 
                     <p class="text-sm text-brand-100">
-                        © 2026 EVENTKAMPUS. {{__('messages.Semua hak dilindungi.')}}
+                        © 2026 EVENTKAMPUS. {{ __('messages.Semua hak dilindungi.') }}
                     </p>
 
-                    <div class="flex items-center gap-6">
-
-                        <a href="/privacy-policy" class="text-sm text-brand-100 hover:text-white transition-colors">
-                            {{__('messages.Kebijakan Privasi')}}
-                        </a>
-
-                        <a href="/terms" class="text-sm text-brand-100 hover:text-white transition-colors">
-                            {{__('messages.Syarat & Ketentuan')}}
-                        </a>
-
-                    </div>
 
                 </div>
 

@@ -1,5 +1,8 @@
 @php
     $isMahasiswa = auth()->check() && auth()->user()->isMahasiswa();
+    $isPanitia = auth()->check() && auth()->user()->role === 'panitia';
+    $eventsRoute = $isPanitia ? route('panitia.events.index') : route('mahasiswa.events');
+    $profileRoute = $isPanitia ? route('profile.edit') : route('mahasiswa.profile');
 @endphp
 <nav class="fixed top-0 left-0 right-0 z-50 bg-brand-700 ">
     <div class="container mx-auto px-6">
@@ -13,49 +16,40 @@
             </a>
 
             <!-- Navigation -->
-            <div class="hidden md:flex items-center justify-center gap-8">
+            <div class="hidden md:flex items-center justify-center gap-1 bg-brand-500 mx-auto p-1 rounded-full">
 
                 <a href="{{ route('welcome') }}"
-                    class=" font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
+                    class="{{ request()->routeIs('welcome') ? 'bg-brand-600 rounded-full' : '' }} px-4 py-1.5 w-fit font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
                     {{ __('messages.Beranda') }}
                 </a>
 
-                <a href="{{route('explore')}}"
-                    class=" font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
-                    {{__('messages.Explore')}}
+                <a href="{{ route('explore') }}"
+                    class="{{ request()->routeIs('explore') ? 'bg-brand-600 rounded-full' : '' }} px-4 py-1.5 w-fit font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
+                    {{ __('messages.Explore') }}
                 </a>
-
-                {{-- <a href="/about"
-                    class=" font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
-                    Tentang
-                </a>
-
-                <a href="/contact-us"
-                    class=" font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
-                    Hubungi Kami
-                </a> --}}
 
             </div>
 
             <!-- Right Section -->
             <div class="flex items-center justify-end gap-3">
 
+                <x-header.lang-dropdown />
+
                 @guest
                     <!-- Ditampilkan HANYA jika user BELUM login -->
                     <a href="{{ route('login') }}"
                         class="inline-flex items-center justify-center px-5 py-1.5 rounded-xl bg-white text-brand-600 font-semibold shadow-theme-sm hover:bg-gray-100 transition-all duration-300">
-                        Masuk
+                        {{ __('messages.Masuk') }}
                     </a>
                 @endguest
-                <x-header.lang-dropdown />
                 @auth
                     @if ($isMahasiswa)
                         <x-header.mahasiswa-dropdown />
                     @else
                         <!-- Ditampilkan HANYA jika user SUDAH login -->
                         <a href="{{ route('dashboard') }}"
-                            class="inline-flex items-center justify-center px-5 py-1.5 rounded-xl bg-white text-brand-600 font-semibold shadow-theme-sm hover:bg-gray-100 transition-all duration-300">
-                            Dashboard
+                            class="items-center justify-center px-5 py-1.5 rounded-xl bg-white text-brand-600 font-semibold shadow-theme-sm hover:bg-gray-100 transition-all duration-300 hidden sm:inline-flex">
+                            {{ __('messages.Dashboard') }}
                         </a>
                     @endif
                 @endauth
@@ -103,7 +97,7 @@
                         d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10m-6.623-3.985-5.299 1.339a1 1 0 0 0-.724.725l-1.339 5.298a.5.5 0 0 0 .607.608l5.3-1.339a1 1 0 0 0 .724-.725l1.339-5.299a.5.5 0 0 0-.607-.607"
                         clip-rule="evenodd"></path>
                 </svg>
-                <span class="text-theme-sm font-semibold text-brand-600">{{__('messages.Explore')}}</span>
+                <span class="text-theme-sm font-semibold text-brand-600">{{ __('messages.Explore') }}</span>
             </a>
         @else
             <!-- Tampilan saat explore TIDAK AKTIF -->
@@ -121,18 +115,18 @@
         <!-- Ticket -->
         @if (request()->routeIs('mahasiswa.events'))
             <!-- Tampilan saat mahasiswa.events AKTIF -->
-            <a href="{{ route('mahasiswa.events') }}"
+            <a href="{{ $eventsRoute }}"
                 class="flex items-center gap-2 rounded-full bg-white px-5 py-3 shadow-theme-sm transition-all duration-300">
                 <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-5 w-5 fill-brand-600">
                     <path fill-rule="evenodd"
                         d="M20.874 14.611c.504.572 1.126 1.453 1.126 2.535A2.854 2.854 0 0 1 19.146 20H4.854A2.854 2.854 0 0 1 2 17.146c0-1.082.623-1.963 1.126-2.535C3.52 14.165 4 13.357 4 12s-.481-2.165-.874-2.611C2.623 8.817 2 7.936 2 6.854A2.854 2.854 0 0 1 4.854 4h14.292A2.854 2.854 0 0 1 22 6.854c0 1.082-.622 1.963-1.126 2.535C20.48 9.835 20 10.643 20 12s.481 2.165.874 2.611m-6.167-5.318a1 1 0 0 0-1.414 0l-4 4a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414"
                         clip-rule="evenodd"></path>
                 </svg>
-                <span class="text-theme-sm font-semibold text-brand-600">Events</span>
+                <span class="text-theme-sm font-semibold text-brand-600">{{ __('messages.Events') }}</span>
             </a>
         @else
             <!-- Tampilan saat mahasiswa.events TIDAK AKTIF -->
-            <a href="{{ route('mahasiswa.events') }}"
+            <a href="{{ $eventsRoute }}"
                 class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
                 <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
                     <path fill-rule="evenodd"
@@ -142,16 +136,16 @@
             </a>
         @endif
         @if (request()->routeIs('mahasiswa.profile'))
-            <a href="{{ route('mahasiswa.profile') }}"
+            <a href="{{ $profileRoute }}"
                 class="flex items-center gap-2 rounded-full bg-white px-5 py-3 shadow-theme-sm transition-all duration-300">
                 <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-5 w-5 fill-brand-600">
                     <path
                         d="M9 14a5 5 0 0 0-5 5 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 5 5 0 0 0-5-5zM12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10" />
                 </svg>
-                <span class="text-theme-sm font-semibold text-brand-600">Profile</span>
+                <span class="text-theme-sm font-semibold text-brand-600">{{ __('messages.Profile') }}</span>
             </a>
         @else
-            <a href="{{ route('mahasiswa.profile') }}"
+            <a href="{{ $profileRoute }}"
                 class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
                 <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
                     <path
@@ -159,27 +153,6 @@
                 </svg>
             </a>
         @endif
-        <!-- Profile -->
-        {{-- @if (request()->routeIs('profile'))
-            <!-- Tampilan saat PROFILE AKTIF -->
-            <a href="{{ route('profile') }}"
-                class="flex items-center gap-2 rounded-full bg-white px-5 py-3 shadow-theme-sm transition-all duration-300">
-                <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-5 w-5 fill-brand-600">
-                    <path
-                        d="M9 14a5 5 0 0 0-5 5 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 5 5 0 0 0-5-5zM12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10" />
-                </svg>
-                <span class="text-theme-sm font-semibold text-brand-600">Profil</span>
-            </a>
-        @else
-            <!-- Tampilan saat PROFILE TIDAK AKTIF -->
-            <a href="{{ route('profile') }}"
-                class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
-                <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
-                    <path
-                        d="M9 14a5 5 0 0 0-5 5 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 5 5 0 0 0-5-5zM12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10" />
-                </svg>
-            </a>
-        @endif --}}
 
     </div>
 

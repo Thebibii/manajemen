@@ -2,7 +2,7 @@
 @section('content')
     <div class="col-span-12 lg:col-span-9">
 
-        <x-common.component-card title="{{ __('messages.Event Saya') }}" desc="{{__('messages.desc my event')}}">
+        <x-common.component-card title="{{ __('messages.Event Saya') }}" desc="{{ __('messages.desc my event') }}">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($eventSaya as $event)
                     <div class="group block h-full">
@@ -83,17 +83,17 @@
                             @if ($event->pivot->status === 'diterima')
                                 <a href="{{ route('mahasiswa.registrations.ticket', $event->pivot->id) }}"
                                     class="block w-full text-center bg-brand-600 text-white font-medium py-3 rounded-b-2xl hover:bg-brand-700 transition-colors">
-                                    Lihat Tiket
+                                    {{ __('messages.Lihat Tiket') }}
                                 </a>
                             @elseif ($event->pivot->status === 'ditolak')
                                 <div
                                     class="block w-full text-center bg-error-600 text-white font-medium py-3 rounded-b-2xl border-t ">
-                                    Pendaftaran Ditolak
+                                    {{ __('messages.Pendaftaran Ditolak') }}
                                 </div>
                             @else
                                 <div
                                     class="block w-full text-center bg-warning-600 text-white font-medium py-3 rounded-b-2xl border-t ">
-                                    {{__('messages.Menunggu Persetujuan')}}
+                                    {{ __('messages.Menunggu Persetujuan') }}
                                 </div>
                             @endif
 

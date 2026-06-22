@@ -2,7 +2,8 @@
 
 @section('content')
     <x-common.page-breadcrumb pageTitle="Event Saya" />
-    <x-common.component-card title="Daftar Event" desc="a">
+    <x-common.component-card title="Daftar Event"
+        desc="Kelola, cari, dan urutkan seluruh agenda kegiatan panitia dengan mudah">
         <x-slot:action>
             <a href="{{ route('panitia.events.create') }}">
                 <x-ui.button variant="primary">Tambah form</x-ui.button>
