@@ -90,5 +90,6 @@ return [
     "Informasi Profil" => "Informasi Profil",
     "Perbarui nama dan alamat email akun Anda." => "Perbarui nama dan alamat email akun Anda.",
     "Simpan Perubahan" => "Simpan Perubahan",
-    'Keluar' => 'Keluar'
+    'Keluar' => 'Keluar',
+    'Edit Profil' => 'Edit Profil'
 ];

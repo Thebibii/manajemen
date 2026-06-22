@@ -39,7 +39,7 @@
                     d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
             </svg>
 
-            <span>Event Saya</span>
+            <span>{{ __('messages.Event Saya') }}</span>
 
             <svg xmlns="http://w3.org"
                 class="w-4 h-4 ml-auto {{ request()->routeIs('mahasiswa.events') ? 'text-white' : 'text-gray-400' }}"
@@ -60,7 +60,7 @@
                     fill="currentColor" />
             </svg>
 
-            <span>Edit Profil</span>
+            <span>{{ __('messages.Edit Profil') }}</span>
 
             <svg xmlns="http://w3.org"
                 class="w-4 h-4 ml-auto {{ request()->routeIs('mahasiswa.profile') ? 'text-white' : 'text-gray-400' }}"
