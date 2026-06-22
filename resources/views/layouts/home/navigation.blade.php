@@ -20,9 +20,9 @@
                     {{ __('messages.Beranda') }}
                 </a>
 
-                <a href="/explore"
+                <a href="{{route('explore')}}"
                     class=" font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
-                    Explore
+                    {{__('messages.Explore')}}
                 </a>
 
                 {{-- <a href="/about"
@@ -103,7 +103,7 @@
                         d="M22 12c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2s10 4.477 10 10m-6.623-3.985-5.299 1.339a1 1 0 0 0-.724.725l-1.339 5.298a.5.5 0 0 0 .607.608l5.3-1.339a1 1 0 0 0 .724-.725l1.339-5.299a.5.5 0 0 0-.607-.607"
                         clip-rule="evenodd"></path>
                 </svg>
-                <span class="text-theme-sm font-semibold text-brand-600">Explore</span>
+                <span class="text-theme-sm font-semibold text-brand-600">{{__('messages.Explore')}}</span>
             </a>
         @else
             <!-- Tampilan saat explore TIDAK AKTIF -->

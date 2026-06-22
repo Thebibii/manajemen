@@ -7,10 +7,10 @@
                 {{-- Search + Tombol --}}
                 <div class="flex gap-2 flex-1">
                     <x-text-input id="search" name="search" type="text" class="w-full"
-                        placeholder="Cari event atau lokasi..." value="{{ request('search') }}" />
+                        placeholder="{{__('messages.Cari event atau lokasi...')}}" value="{{ request('search') }}" />
                     <button type="submit"
                         class="px-5 py-2.5 bg-brand-700 hover:bg-brand-800 text-white text-sm font-medium rounded-lg transition-colors whitespace-nowrap h-11">
-                        Cari
+                        {{__('messages.Cari')}}
                     </button>
                 </div>
 
@@ -20,15 +20,15 @@
                         class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-11 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
                         :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'"
                         @change="isOptionSelected = true; $el.closest('form').submit()">
-                        <option value="" class="text-gray-400">Semua Periode</option>
+                        <option value="" class="text-gray-400">{{__('messages.Semua Periode')}}</option>
                         <option value="minggu_ini" {{ request('periode') == 'minggu_ini' ? 'selected' : '' }}
-                            class="text-gray-700">Minggu Ini</option>
+                            class="text-gray-700">{{__('messages.Minggu Ini')}}</option>
                         <option value="minggu_depan" {{ request('periode') == 'minggu_depan' ? 'selected' : '' }}
-                            class="text-gray-700">Minggu Depan</option>
+                            class="text-gray-700">{{__('messages.Minggu Depan')}}</option>
                         <option value="bulan_ini" {{ request('periode') == 'bulan_ini' ? 'selected' : '' }}
-                            class="text-gray-700">Bulan Ini</option>
+                            class="text-gray-700">{{__('messages.Bulan Ini')}}</option>
                         <option value="bulan_depan" {{ request('periode') == 'bulan_depan' ? 'selected' : '' }}
-                            class="text-gray-700">Bulan Depan</option>
+                            class="text-gray-700">{{__('messages.Bulan Depan')}}</option>
                     </select>
                     <span class="pointer-events-none absolute top-1/2 right-4 z-30 -translate-y-1/2 text-gray-700">
                         <svg class="stroke-current" width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -45,15 +45,15 @@
                         class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-11 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
                         :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'"
                         @change="isOptionSelected = true;$el.closest('form').submit()">
-                        <option value="" class="text-gray-400">Urutkan Event</option>
+                        <option value="" class="text-gray-400">{{__('messages.Urutkan Event')}}</option>
                         <option value="waktu_terdekat" {{ request('urutan') == 'waktu_terdekat' ? 'selected' : '' }}
-                            class="text-gray-700">Waktu Mulai (Terdekat)</option>
+                            class="text-gray-700">{{__('messages.Waktu Mulai (Terdekat)')}}</option>
                         <option value="waktu_terjauh" {{ request('urutan') == 'waktu_terjauh' ? 'selected' : '' }}
-                            class="text-gray-700">Waktu Mulai (Terjauh)</option>
+                            class="text-gray-700">{{__('messages.Waktu Mulai (Terjauh)')}}</option>
                         <option value="nama_az" {{ request('urutan') == 'nama_az' ? 'selected' : '' }}
-                            class="text-gray-700">Nama Event (A-Z)</option>
+                            class="text-gray-700">{{__('messages.Nama Event (A-Z)')}}</option>
                         <option value="nama_za" {{ request('urutan') == 'nama_za' ? 'selected' : '' }}
-                            class="text-gray-700">Nama Event (Z-A)</option>
+                            class="text-gray-700">{{__('messages.Nama Event (Z-A)')}}</option>
                     </select>
                     <span class="pointer-events-none absolute top-1/2 right-4 z-30 -translate-y-1/2 text-gray-700">
                         <svg class="stroke-current" width="20" height="20" viewBox="0 0 20 20" fill="none"
@@ -99,7 +99,7 @@
                                                 </svg>
 
                                                 <p class="mt-2 text-sm text-gray-500">
-                                                    Gambar belum tersedia
+                                                    {{__('messages.Gambar belum tersedia')}}
                                                 </p>
                                             </div>
                                         </div>

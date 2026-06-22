@@ -8,16 +8,14 @@
                 <div class="space-y-8">
                     <div>
                         <h1 class="font-outfit text-title-md  sm:text-title-lg lg:text-title-xl font-bold text-gray-900">
-                            Temukan dan Kelola
+                            {{__('messages.Temukan dan Kelola')}}
                             <span class="block text-brand-600">
-                                Kegiatan Kampus dengan Mudah
+                                {{__('messages.Kegiatan Kampus dengan Mudah')}}
                             </span>
                         </h1>
 
                         <p class="mt-6 max-w-xl text-gray-500 text-sm sm:text-base ">
-                            Event Kampus adalah platform yang memudahkan mahasiswa, organisasi, dan pihak kampus dalam
-                            menemukan, mengelola, serta mengikuti berbagai kegiatan. Mulai dari seminar, workshop, lomba,
-                            pelatihan, hingga acara organisasi, semua dapat diakses dalam satu sistem yang terintegrasi.
+                            {{__('messages.hero_description')}}
                         </p>
                     </div>
 
@@ -26,7 +24,7 @@
                         <a href="{{ route('explore') }}"
                             class="inline-flex items-center gap-2 px-4 py-2 text-sm sm:text-base sm:px-6 sm:py-3 rounded-xl bg-brand-600 text-white shadow-theme-md hover:bg-brand-700 transition-all duration-300">
 
-                            Lihat Event
+                            {{__('messages.Lihat Event')}}
 
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -119,18 +117,17 @@
 
                 <div>
                     <h2 class="font-outfit text-title-sm font-bold text-gray-900">
-                        Event Terdekat
+                        {{__('messages.Event Terdekat')}}
                     </h2>
 
                     <p class="mt-2 text-gray-500 max-w-2xl ">
-                        Temukan konser, festival, dan pertunjukan musik terbaik yang akan
-                        berlangsung dalam waktu dekat.
+                        {{__('messages.tp2')}}
                     </p>
                 </div>
 
                 <a href="{{ route('explore') }}"
                     class="inline-flex items-center gap-2 text-brand-600 font-medium hover:text-brand-700 transition">
-                    Lihat Semua
+                    {{__('messages.Lihat Semua')}}
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -179,7 +176,7 @@
                                                 </svg>
 
                                                 <p class="mt-2 text-sm text-gray-500">
-                                                    Gambar belum tersedia
+                                                    {{__('messages.Gambar belum tersedia')}}
                                                 </p>
                                             </div>
                                         </div>

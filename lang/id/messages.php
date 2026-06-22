@@ -22,7 +22,7 @@ return [
     "Explore" => "Jelajah",
     "Kontak" => "Kontak",
 
-    "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet." => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
+    "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
 
     "Kebijakan Privasi" => "Kebijakan Privasi",
     "Syarat & Ketentuan" => "Syarat & Ketentuan",
@@ -34,7 +34,7 @@ return [
     "Temukan dan Kelola" => "Temukan dan Kelola",
     "Kegiatan Kampus dengan Mudah" => "Kegiatan Kampus dengan Mudah",
 
-    "Event Kampus adalah platform yang memudahkan mahasiswa, organisasi, dan pihak kampus dalam menemukan, mengelola, serta mengikuti berbagai kegiatan. Mulai dari seminar, workshop, lomba, pelatihan, hingga acara organisasi, semua dapat diakses dalam satu sistem yang terintegrasi." => "Event Kampus adalah platform yang memudahkan mahasiswa, organisasi, dan pihak kampus dalam menemukan, mengelola, serta mengikuti berbagai kegiatan.",
+    "hero_description" => "Event Kampus adalah platform yang memudahkan mahasiswa, organisasi, dan pihak kampus dalam menemukan, mengelola, serta mengikuti berbagai kegiatan.",
 
     "Lihat Event" => "Lihat Event",
     "Event Terdekat" => "Event Terdekat",
