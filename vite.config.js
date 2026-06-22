@@ -14,7 +14,10 @@ export default defineConfig({
         rollupOptions: {
             output: {
                 manualChunks: {
-                    vendor: ["alpinejs", "axios"],
+                    vendor: ["alpinejs", "@popperjs/core"],
+                    charts: ["apexcharts"],
+                    calendar: ["@fullcalendar/core"],
+                    flatpickr: ["flatpickr"],
                 },
             },
         },
