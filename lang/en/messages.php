@@ -75,6 +75,18 @@ return [
     "Next" => "Next",
     "The email field is required." => "The email field is required.",
     "The password field is required." => "The password field is required.",
-
-
+    "Event Saya" => "My event",
+    "desc my event" => "List of events registered with your account email",
+    "Nama Lengkap" => "Full Name",
+    "Alamat Email" => "Email Address",
+    "Ubah Password" => "Change Password",
+    "Desc Password" => "Use a long and random password to keep your account secure.",
+    "Password Saat Ini" => "Current Password",
+    "Password Baru" => "New Password",
+    "Konfirmasi Password Baru" => "Confirm New Password",
+    "Perbarui Password" => "Update Password",
+    "Password berhasil diperbarui" => "Password updated successfully",
+    "Informasi Profil" => "Profile Information",
+    "Perbarui nama dan alamat email akun Anda." => "Update your account name and email address.",
+    "Simpan Perubahan" => "Save Changes",
 ];

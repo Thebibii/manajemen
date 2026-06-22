@@ -7,7 +7,6 @@ return [
     "Email" => "Email",
     "Password" => "Kata Sandi",
     "Password Confirmation" => "Konfirmasi Kata Sandi",
-    "Full Name" => "Nama Lengkap",
     "Create one" => "Buat akun",
     "Dont have an account?" => "Belum punya akun?",
     "Already have an account?" => "Sudah punya akun?",
@@ -21,9 +20,9 @@ return [
     "Beranda" => "Beranda",
     "Explore" => "Jelajah",
     "Kontak" => "Kontak",
-
+    
     "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
-
+    
     "Kebijakan Privasi" => "Kebijakan Privasi",
     "Syarat & Ketentuan" => "Syarat & Ketentuan",
     "Semua hak dilindungi." => "Semua hak dilindungi.",
@@ -40,7 +39,7 @@ return [
     "Event Terdekat" => "Event Terdekat",
     "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat." => "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat.",
     "Lihat Semua" => "Lihat Semua",
-
+    
     "Coming Soon" => "Segera Hadir",
     "Deskripsi" => "Deskripsi",
     "Tanggal" => "Tanggal",
@@ -76,6 +75,20 @@ return [
     "Menunggu Persetujuan" => "Menunggu Persetujuan",
     "Previous" => "Sebelumnya",
     "Next" => "Selanjutnya",
-    "The email field is required." => "Kolom email wajib diisi."
+    "The email field is required." => "Kolom email wajib diisi.",
+    "Event Saya" => "Event Saya",
+    "desc my event" => "Daftar event yang terdaftar sesuai dengan email akun",
+    "Nama Lengkap" => "Nama Lengkap",
+    "Alamat Email" => "Alamat Email",
+    "Ubah Password" => "Ubah Password",
+    "Desc Password" => "Gunakan kata sandi yang panjang dan acak agar akun Anda tetap aman.",
+    "Password Saat Ini" => "Password Saat Ini",
+    "Password Baru" => "Password Baru",
+    "Konfirmasi Password Baru" => "Konfirmasi Password Baru",
+    "Perbarui Password" => "Perbarui Password",
+    "Password berhasil diperbarui" => "Password berhasil diperbarui",
+    "Informasi Profil" => "Informasi Profil",
+    "Perbarui nama dan alamat email akun Anda." => "Perbarui nama dan alamat email akun Anda.",
+    "Simpan Perubahan" => "Simpan Perubahan",
 
 ];

@@ -2,7 +2,7 @@
 @section('content')
     <div class="col-span-12 lg:col-span-9">
 
-        <x-common.component-card title="Event Saya" desc="Daftar event yang terdaftar sesuai dengan email akun">
+        <x-common.component-card title="{{ __('messages.Event Saya') }}" desc="{{__('messages.desc my event')}}">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 @foreach ($eventSaya as $event)
                     <div class="group block h-full">
@@ -93,7 +93,7 @@
                             @else
                                 <div
                                     class="block w-full text-center bg-warning-600 text-white font-medium py-3 rounded-b-2xl border-t ">
-                                    Menunggu Persetujuan
+                                    {{__('messages.Menunggu Persetujuan')}}
                                 </div>
                             @endif
 

@@ -6,7 +6,7 @@
         {{-- ===================== --}}
         {{-- 1. INFORMASI PROFIL  --}}
         {{-- ===================== --}}
-        <x-common.component-card title="Informasi Profil" desc="Perbarui nama dan alamat email akun Anda.">
+        <x-common.component-card title="{{__('messages.Informasi Profil')}}" desc="{{__('messages.Perbarui nama dan alamat email akun Anda.')}}">
 
             <form method="post" action="{{ route('profile.update') }}" class="space-y-5">
                 @csrf
@@ -14,7 +14,7 @@
 
                 {{-- Nama --}}
                 <div>
-                    <x-input-label for="name" :value="__('Nama Lengkap')" />
+                    <x-input-label for="name" :value="__('messages.Nama Lengkap')" />
                     <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)"
                         required autofocus autocomplete="name" />
                     <x-input-error class="mt-2" :messages="$errors->get('name')" />
@@ -22,7 +22,7 @@
 
                 {{-- Email --}}
                 <div>
-                    <x-input-label for="email" :value="__('Alamat Email')" />
+                    <x-input-label for="email" :value="__('messages.Alamat Email')" />
                     <x-text-input id="email" name="email" disabled="true" type="email" class="mt-1 block w-full"
                         :value="old('email', $user->email)" required autocomplete="username" />
                     <x-input-error class="mt-2" :messages="$errors->get('email')" />
@@ -34,7 +34,7 @@
 
                 {{-- Submit --}}
                 <div class="flex items-center gap-4 pt-1">
-                    <x-ui.button type="submit">{{ __('Simpan Perubahan') }}</x-ui.button>
+                    <x-ui.button type="submit">{{ __('messages.Simpan Perubahan') }}</x-ui.button>
 
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 3000)"
@@ -57,8 +57,8 @@
         {{-- ================== --}}
         {{-- 2. UBAH PASSWORD   --}}
         {{-- ================== --}}
-        <x-common.component-card title="Ubah Password"
-            desc="Gunakan kata sandi yang panjang dan acak agar akun Anda tetap aman.">
+        <x-common.component-card title="{{__('messages.Ubah Password')}}"
+            desc="{{__('messages.Desc Password')}}">
 
             <form method="post" action="{{ route('password.update') }}" class="space-y-5">
                 @csrf
@@ -66,7 +66,7 @@
 
                 {{-- Password Saat Ini --}}
                 <div>
-                    <x-input-label for="current_password" :value="__('Password Saat Ini')" />
+                    <x-input-label for="current_password" :value="__('messages.Password Saat Ini')" />
                     <x-text-input id="current_password" name="current_password" type="password" class="mt-1 block w-full"
                         autocomplete="current-password" />
                     <x-input-error :messages="$errors->updatePassword->get('current_password')" class="mt-2" />
@@ -74,7 +74,7 @@
 
                 {{-- Password Baru --}}
                 <div>
-                    <x-input-label for="password" :value="__('Password Baru')" />
+                    <x-input-label for="password" :value="__('messages.Password Baru')" />
                     <x-text-input id="password" name="password" type="password" class="mt-1 block w-full"
                         autocomplete="new-password" />
                     <x-input-error :messages="$errors->updatePassword->get('password')" class="mt-2" />
@@ -82,7 +82,7 @@
 
                 {{-- Konfirmasi Password --}}
                 <div>
-                    <x-input-label for="password_confirmation" :value="__('Konfirmasi Password Baru')" />
+                    <x-input-label for="password_confirmation" :value="__('messages.Konfirmasi Password Baru')" />
                     <x-text-input id="password_confirmation" name="password_confirmation" type="password"
                         class="mt-1 block w-full" autocomplete="new-password" />
                     <x-input-error :messages="$errors->updatePassword->get('password_confirmation')" class="mt-2" />
@@ -90,7 +90,7 @@
 
                 {{-- Submit --}}
                 <div class="flex items-center gap-4 pt-1">
-                    <x-ui.button>{{ __('Perbarui Password') }}</x-ui.button>
+                    <x-ui.button>{{ __('messages.Perbarui Password') }}</x-ui.button>
 
                     @if (session('status') === 'password-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 3000)"
