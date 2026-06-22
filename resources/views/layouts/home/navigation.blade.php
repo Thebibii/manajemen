@@ -17,7 +17,7 @@
 
                 <a href="{{ route('welcome') }}"
                     class=" font-outfit font-medium text-white/90 hover:text-white transition-colors duration-300">
-                    Beranda
+                    {{ __('messages.Beranda') }}
                 </a>
 
                 <a href="/explore"
@@ -47,7 +47,7 @@
                         Masuk
                     </a>
                 @endguest
-
+                <x-header.lang-dropdown />
                 @auth
                     @if ($isMahasiswa)
                         <x-header.mahasiswa-dropdown />
@@ -79,7 +79,7 @@
                     <path
                         d="M12.708 3.08a3 3 0 0 0-1.416 0c-.531.13-1 .449-1.535.812L4.756 7.28c-.427.288-.802.542-1.084.888a3 3 0 0 0-.545 1.028C3 9.623 3 10.076 3 10.59v6.248c0 .527 0 .982.03 1.356.033.396.104.789.297 1.167a3 3 0 0 0 1.311 1.311c.378.193.772.265 1.167.297.374.03.83.03 1.356.03h1.553c.71 0 1.286-.575 1.286-1.285V17a2 2 0 0 1 4 0v2.715c0 .71.576 1.285 1.286 1.285h1.553c.527 0 .981 0 1.356-.03.395-.032.788-.104 1.167-.297a3 3 0 0 0 1.31-1.31c.194-.38.265-.772.297-1.168.031-.374.03-.829.03-1.356L21 10.59c0-.515.001-.968-.128-1.395a3 3 0 0 0-.544-1.028c-.282-.346-.657-.6-1.084-.888l-5.001-3.388c-.534-.363-1.004-.682-1.535-.811" />
                 </svg>
-                <span class="text-theme-sm font-semibold text-brand-600">Beranda</span>
+                <span class="text-theme-sm font-semibold text-brand-600">{{ __('messages.Beranda') }}</span>
             </a>
         @else
             <!-- Tampilan saat HOME TIDAK AKTIF -->

@@ -10,12 +10,28 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $totalEvents = Event::count();
-        $totalPendaftar = Registration::count();
-        $totalPending = Registration::where('status', 'pending')->count();
-        $totalDiterima = Registration::where('status', 'diterima')->count();
+        $userId = auth()->id();
 
-        $registrasiPerEvent = Event::has('registrations')
+        $eventIds = Event::where('user_id', $userId)->pluck('id');
+
+        $totalEvents = $eventIds->count();
+
+        $totalPendaftar = Registration::whereIn('event_id', $eventIds)->count();
+
+        $totalPending = Registration::whereIn('event_id', $eventIds)
+            ->where('status', 'pending')
+            ->count();
+
+        $totalDiterima = Registration::whereIn('event_id', $eventIds)
+            ->where('status', 'diterima')
+            ->count();
+
+        $totalDitolak = Registration::whereIn('event_id', $eventIds)
+            ->where('status', 'ditolak')
+            ->count();
+
+        $registrasiPerEvent = Event::where('user_id', $userId)
+            ->has('registrations')
             ->withCount('registrations')
             ->orderBy('registrations_count', 'desc')
             ->take(5)
@@ -23,8 +39,6 @@ class DashboardController extends Controller
 
         $eventLabels = $registrasiPerEvent->pluck('nama');
         $eventData   = $registrasiPerEvent->pluck('registrations_count');
-
-        $totalDitolak = Registration::where('status', 'ditolak')->count();
 
         return view('pages.dashboard', compact(
             'totalEvents',

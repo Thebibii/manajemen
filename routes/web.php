@@ -6,6 +6,17 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\RegistrationController;
+use Illuminate\Support\Facades\App;
+
+Route::get('/lang/{locale}', function ($locale) {
+    if (!in_array($locale, ['en', 'id'])) {
+        abort(400);
+    }
+    session(['locale' => $locale]);
+    App::setLocale($locale);
+
+    return redirect()->back();
+})->name('lang.switch');
 
 // dashboard pages
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
