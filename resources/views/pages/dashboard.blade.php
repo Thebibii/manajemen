@@ -17,7 +17,7 @@
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">Total Event</span>
+                            <span class="text-sm text-gray-500">{{__('messages.Total Event')}}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalEvents }}</h4>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">Total Pendaftar</span>
+                            <span class="text-sm text-gray-500">{{__('messages.Total Pendaftar')}}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalPendaftar }}</h4>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">Menunggu Approval</span>
+                            <span class="text-sm text-gray-500">{{__('messages.Menunggu Approval')}}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalPending }}</h4>
                         </div>
                         @if ($totalPendaftar > 0)
@@ -77,7 +77,7 @@
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">Pendaftar Diterima</span>
+                            <span class="text-sm text-gray-500">{{__('messages.Pendaftar Diterima')}}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalDiterima }}</h4>
                         </div>
                         @if ($totalPendaftar > 0)
@@ -95,7 +95,7 @@
             <div class="rounded-2xl border border-gray-200 bg-white px-5 pt-5 sm:px-6 sm:pt-6">
                 <div class="flex items-center justify-between">
                     <h3 class="text-lg font-semibold text-gray-800">
-                        Pendaftar per Event
+                        {{__('messages.Pendaftar per Event')}}
                     </h3>
                 </div>
 
@@ -114,10 +114,10 @@
             <div class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6">
                 <div>
                     <h3 class="text-lg font-semibold text-gray-800">
-                        Status Registrasi
+                        {{__('messages.Status Registrasi')}}
                     </h3>
                     <p class="mt-1 text-theme-sm text-gray-500">
-                        Distribusi status pendaftar seluruh event
+                        {{__('messages.Distribusi status pendaftar seluruh event')}}
                     </p>
                 </div>
 

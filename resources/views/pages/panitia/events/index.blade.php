@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-common.page-breadcrumb pageTitle="Event Saya" />
-    <x-common.component-card title="Daftar Event"
-        desc="Kelola, cari, dan urutkan seluruh agenda kegiatan panitia dengan mudah">
+    <x-common.page-breadcrumb pageTitle="{{__('messages.Event Saya')}}" />
+    <x-common.component-card title="{{__('messages.Daftar Event')}}"
+        desc="{{__('messages.list event desc')}}">
         <x-slot:action>
             <a href="{{ route('panitia.events.create') }}">
-                <x-ui.button variant="primary">Tambah form</x-ui.button>
+                <x-ui.button variant="primary">{{__('messages.Tambah Form')}}</x-ui.button>
             </a>
         </x-slot:action>
         @if (session('success'))
@@ -19,7 +19,7 @@
             <!-- Header -->
             <div class="flex flex-col gap-2 px-5 mb-4 sm:flex-row sm:items-center sm:justify-between sm:px-6">
                 <div>
-                    <h3 class="text-lg font-semibold text-gray-800">Daftar Event</h3>
+                    <h3 class="text-lg font-semibold text-gray-800">{{__('messages.Daftar Event')}}</h3>
                 </div>
                 <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
                     <form method="GET" action="{{ route('panitia.events.index') }}" class="flex items-center gap-x-4">
@@ -33,7 +33,7 @@
                                 </svg>
                             </button>
                             <input type="text" name="search" value="{{ request('search') }}"
-                                placeholder="Cari nama atau lokasi..."
+                                placeholder="{{__('messages.Cari nama atau lokasi')}}"
                                 class="h-[42px] w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pl-[42px] pr-4 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring-3 focus:ring-brand-500/10 xl:w-[300px]" />
                         </div>
 
@@ -46,19 +46,19 @@
                                     class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] w-fit appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
                                     :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'">
                                     <option value="" disabled class="text-gray-400">
-                                        Urutkan Event
+                                        {{__('messages.Urutkan Event')}}
                                     </option>
                                     <option value="waktu_terdekat" class="text-gray-700">
-                                        Waktu Mulai (Terdekat)
+                                        {{__('messages.Waktu Mulai (Terdekat)')}}
                                     </option>
                                     <option value="waktu_terjauh" class="text-gray-700">
-                                        Waktu Mulai (Terjauh)
+                                        {{__('messages.Waktu Mulai (Terjauh)')}}
                                     </option>
                                     <option value="nama_az" class="text-gray-700">
-                                        Nama Event (A-Z)
+                                        {{__('messages.Nama Event (A-Z)')}}
                                     </option>
                                     <option value="nama_za" class="text-gray-700">
-                                        Nama Event (Z-A)
+                                        {{__('messages.Nama Event (Z-A)')}}
                                     </option>
                                 </select>
 
@@ -83,13 +83,13 @@
                         <thead>
                             <tr class="border-gray-200 border-y">
                                 <th scope="col" class="px-4 py-3 font-normal text-gray-500 text-start text-theme-sm">
-                                    Nama Event</th>
+                                    {{__('messages.Nama Event')}}</th>
                                 <th scope="col" class="px-4 py-3 font-normal text-gray-500 text-start text-theme-sm">
-                                    Tanggal</th>
+                                    {{__('messages.Tanggal')}}</th>
                                 <th scope="col" class="px-4 py-3 font-normal text-gray-500 text-start text-theme-sm">
-                                    Lokasi</th>
+                                    {{__('messages.Lokasi')}}</th>
                                 <th scope="col" class="px-4 py-3 font-normal text-gray-500 text-start text-theme-sm">
-                                    Kuota</th>
+                                    {{__('messages.Kuota')}}</th>
                                 <th scope="col" class="relative px-4 py-3 capitalize">
                                     <span class="sr-only">Aksi</span>
                                 </th>
@@ -110,7 +110,7 @@
                                         <div class="text-sm text-gray-500">{{ $event->lokasi }}</div>
                                     </td>
                                     <td class="px-4 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-500">{{ $event->kuota }} orang</div>
+                                        <div class="text-sm text-gray-500">{{ $event->kuota }} {{__('messages.orang')}}</div>
                                     </td>
                                     <td class="px-4 py-4 text-sm font-medium text-right whitespace-nowrap">
                                         <div class="flex justify-center relative">
@@ -132,7 +132,7 @@
                                                     <a href="{{ route('panitia.events.show', $event) }}"
                                                         class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700"
                                                         role="menuitem">
-                                                        Lihat Detail
+                                                        {{__('messages.Lihat Detail')}}
                                                     </a>
                                                     <a href="{{ route('panitia.events.edit', $event) }}"
                                                         class="flex w-full px-3 py-2 font-medium text-left text-gray-500 rounded-lg text-theme-xs hover:bg-gray-100 hover:text-gray-700"
@@ -146,7 +146,7 @@
                                                         })"
                                                         class="flex w-full px-3 py-2 font-medium text-left text-red-500 rounded-lg text-theme-xs hover:bg-red-50"
                                                         role="menuitem">
-                                                        Hapus
+                                                        {{__('messages.Hapus')}}
                                                     </button>
                                                 </x-slot>
                                             </x-common.table-dropdown>
