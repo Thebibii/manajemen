@@ -13,17 +13,17 @@
                             <path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="" stroke-width="1.5"
                                 stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        Back to Home
+                        {{__('messages.Back to Home')}}
                     </a>
                 </div>
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
                     <div>
                         <div class="mb-5 sm:mb-8">
                             <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800">
-                                Sign In
+                                {{__('messages.Sign In')}}
                             </h1>
                             <p class="text-sm text-gray-500">
-                                Enter your email and password to sign in!
+                                {{__('messages.Enter your email and password to sign in!')}}
                             </p>
                         </div>
 
@@ -47,7 +47,7 @@
                                     <!-- Password -->
                                     <div>
                                         <label for="password" class="mb-1.5 block text-sm font-medium text-gray-700">
-                                            Password<span class="text-error-500">*</span>
+                                            {{__('messages.Password')}}<span class="text-error-500">*</span>
                                         </label>
                                         <div x-data="{ showPassword: false }" class="relative">
                                             <input :type="showPassword ? 'text' : 'password'" id="password" name="password"
@@ -94,13 +94,13 @@
                                                         </span>
                                                     </div>
                                                 </div>
-                                                {{ __('Remember me') }}
+                                                {{ __('messages.Remember me') }}
                                             </label>
                                         </div>
                                         @if (Route::has('password.request'))
                                             <a href="{{ route('password.request') }}"
                                                 class="text-brand-500 hover:text-brand-600 text-sm">
-                                                {{ __('Forgot password?') }}
+                                                {{ __('messages.Forgot password?') }}
                                             </a>
                                         @endif
                                     </div>
@@ -108,16 +108,16 @@
                                     <div>
                                         <button type="submit"
                                             class="bg-brand-500 shadow-theme-xs hover:bg-brand-600 flex w-full items-center justify-center rounded-lg px-4 py-3 text-sm font-medium text-white transition">
-                                            {{ __('Sign In') }}
+                                            {{ __('messages.Sign In') }}
                                         </button>
                                     </div>
                                 </div>
                             </form>
                             <div class="mt-5">
                                 <p class="text-center text-sm font-normal text-gray-700 sm:text-start">
-                                    Don't have an account?
+                                    {{__('messages.Dont have an account?')}}
                                     <a href="{{ route('register') }}"
-                                        class="text-brand-500 hover:text-brand-600">Register</a>
+                                        class="text-brand-500 hover:text-brand-600">{{__('messages.Register')}}</a>
                                 </p>
                             </div>
                         </div>
