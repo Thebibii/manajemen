@@ -73,7 +73,7 @@
         {{-- Content --}}
         <div class="min-w-0 flex-1">
 
-            <p class=" font-semibold text-gray-800"
+            <p class="text-sm font-semibold text-gray-800"
                 :class="{
                     'text-success-700': $store.notification.type === 'success',
                     'text-blue-light-700': $store.notification.type === 'info',
@@ -88,7 +88,7 @@
 
             </p>
 
-            <p class=" text-gray-600 break-words" x-text="$store.notification.message">
+            <p class="text-sm text-gray-600 break-words" x-text="$store.notification.message">
             </p>
 
         </div>

@@ -16,7 +16,7 @@
 
         <!-- Slot Tombol di Sini -->
         @if (isset($action))
-            <div class=" flex-shrink-0">
+            <div class="flex w-full sm:w-fit">
                 {{ $action }}
             </div>
         @endif

@@ -12,7 +12,8 @@
 
                         @if ($event->gambar)
                             <img src="{{ Storage::url($event->gambar) }}" alt="{{ $event->nama }}"
-                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                loading="lazy">
                         @else
                             <div class="flex h-full w-full items-center justify-center">
                                 <div class="text-center">
@@ -234,10 +235,17 @@
                                 @endif
                             @endif
                         @else
-                            <button disabled
-                                class="w-full inline-flex items-center justify-center rounded-xl bg-gray-400 px-5 py-3 text-white font-medium cursor-not-allowed">
-                                {{ __('messages.Kuota Penuh') }}
-                            </button>
+                            @if ($sudahDaftar->status === 'diterima')
+                                <a href="{{ route('mahasiswa.registrations.ticket', $sudahDaftar->id) }}"
+                                    class="w-full inline-flex items-center justify-center rounded-xl bg-brand-600 px-5 py-3 text-white font-medium hover:bg-brand-700 transition">
+                                    {{ __('messages.Lihat Tiket') }}
+                                </a>
+                            @else
+                                <button disabled
+                                    class="w-full inline-flex items-center justify-center rounded-xl bg-gray-400 px-5 py-3 text-white font-medium cursor-not-allowed">
+                                    {{ __('messages.Kuota Penuh') }}
+                                </button>
+                            @endif
                         @endif
 
                     </div>

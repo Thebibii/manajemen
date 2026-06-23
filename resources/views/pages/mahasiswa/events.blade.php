@@ -2,9 +2,40 @@
 @section('content')
     <div class="col-span-12 lg:col-span-9">
 
-        <x-common.component-card title="{{ __('messages.Event Saya') }}" desc="{{ __('messages.desc my event') }}">
+        <x-common.component-card title="{{ __('messages.Event Saya') }}"
+            headerClass="flex flex-col w-full sm:flex-row sm:items-center sm:justify-between gap-y-4"
+            desc="{{ __('messages.desc my event') }}">
+
+            <x-slot:action>
+                <form method="GET" action="{{ route('mahasiswa.events') }}" class="w-full sm:fit">
+                    <div x-data="{
+                        selectedStatus: '{{ request('status', '') }}',
+                        get isOptionSelected() { return this.selectedStatus !== ''; }
+                    }" class="w-full sm:w-fit">
+                        <div class="relative z-20 bg-transparent">
+                            <select x-model="selectedStatus" name="status" @change="$el.form.submit()"
+                                class="w-full sm:w-[180px] shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
+                                :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'">
+
+                                <option value="" class="text-gray-400">Semua Status</option>
+                                <option value="pending" class="text-gray-700">Pending</option>
+                                <option value="diterima" class="text-gray-700">Diterima</option>
+                                <option value="ditolak" class="text-gray-700">Ditolak</option>
+                            </select>
+
+                            <span class="pointer-events-none absolute top-1/2 right-4 z-30 -translate-y-1/2 text-gray-700">
+                                <svg class="stroke-current" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4.79175 7.396L10.0001 12.6043L15.2084 7.396" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </x-slot:action>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach ($eventSaya as $event)
+                @forelse ($eventSaya as $event)
                     <div class="group block h-full">
 
                         <div
@@ -77,7 +108,8 @@
 
                                         </svg>
 
-                                        <span class="truncate">{{ $event->tanggal->translatedFormat('d M Y • H:i') }}</span>
+                                        <span
+                                            class="truncate">{{ $event->tanggal->translatedFormat('l, d F Y • H:i') }}</span>
 
                                     </div>
 
@@ -126,7 +158,11 @@
                         </div>
 
                     </div>
-                @endforeach
+                @empty
+                    <div class="w-full py-2 text-gray-500">
+                        Belum ada event yang tersedia saat ini.
+                    </div>
+                @endforelse
 
             </div>
         </x-common.component-card>

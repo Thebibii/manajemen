@@ -2,7 +2,7 @@
 @section('content')
     <div class="pt-28 pb-12">
 
-        <div class="max-w-lg mx-auto">
+        <div class="max-w-lg mx-auto px-4">
 
             <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-theme-lg">
 
@@ -29,7 +29,7 @@
 
                         <span class="rounded-lg bg-white/10 px-3 py-1.5 text-sm">
 
-                            {{ $registration->event->tanggal->translatedFormat('d M Y') }}
+                            {{ $registration->event->tanggal->translatedFormat('l, d F Y') }}
 
                         </span>
 

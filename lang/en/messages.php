@@ -121,7 +121,7 @@ return [
     "menjadi" => "become",
     "Pendaftar" => "Applicants",
     "pendaftar" => "applicants",
-    "Lihat Detail" => "View details",
+    "Detail" => "Details",
     "Hapus" => "Delete",
     "Masukkan nama event" => "Enter event name",
     "Jelaskan detail mengenai event ini..." => "Please provide details about this event...",
@@ -138,11 +138,12 @@ return [
     "Perbarui Event" => "Update Event",
     "Tidak ada event ditemukan." => "No events found.",
     "Simpan" => "Save",
+    'Detail Event' => 'Detail Event',
+    'Kembali ke Beranda' => 'Back to Home',
 
     //teks panjang
     "tp2" => "Find the best concerts, festivals, and music shows that will take place soon.",
     "home_tp" => "A ticket platform for art communities, creative communities, and live music lovers in Indonesia.Find the best events, buy tickets easily, and enjoy a hassle-free experience.",
     "tp3" => "Manage participants who have registered for your event",
     "tp4" => "Example: Gedung Serbaguna / Zoom Meeting"
-    ];
-    
+];

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-common.page-breadcrumb pageTitle="{{__('messages.Konfirmasi Peserta')}}" />
+    <x-common.page-breadcrumb pageTitle="{{ __('messages.Konfirmasi Peserta') }}" />
 
-    <x-common.component-card title="{{__('messages.Daftar Peserta')}}"
-        headerClass="flex-col items-start w-full sm:flex-row sm:items-center sm:justify-between"
-        desc="{{__('messages.tp3')}}">
+    <x-common.component-card title="{{ __('messages.Daftar Peserta') }}"
+        headerClass="flex flex-col w-full sm:flex-row sm:items-center sm:justify-between gap-y-4"
+        desc="{{ __('messages.tp3') }}">
 
         <x-slot:action>
             <div class="flex items-center gap-3">
@@ -20,12 +20,12 @@
                 </div>
 
                 <div class="rounded-lg border border-green-200 bg-green-50 px-3 py-2 text-center">
-                    <p class="text-xs text-green-700">{{__('messages.Diterima')}}</p>
+                    <p class="text-xs text-green-700">{{ __('messages.Diterima') }}</p>
                     <p class="font-semibold text-green-800">{{ $stats['diterima'] }}</p>
                 </div>
 
                 <div class="rounded-lg border border-red-200 bg-red-50 px-3 py-2 text-center">
-                    <p class="text-xs text-red-700">{{__('messages.Ditolak')}}</p>
+                    <p class="text-xs text-red-700">{{ __('messages.Ditolak') }}</p>
                     <p class="font-semibold text-red-800">{{ $stats['ditolak'] }}</p>
                 </div>
             </div>
@@ -36,12 +36,12 @@
             <!-- Filter -->
             <div class="mb-4 flex flex-col gap-3 px-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
                 <div>
-                    <h3 class="text-lg font-semibold text-gray-800">{{__('messages.Daftar Event')}}</h3>
+                    <h3 class="text-lg font-semibold text-gray-800">{{ __('messages.Daftar Event') }}</h3>
                 </div>
                 <form method="GET" action="{{ route('panitia.registrations.index') }}"
                     class="flex flex-col gap-3 sm:flex-row sm:items-center">
 
-                    <div class="relative">
+                    <div class="relative w-full sm:w-fit">
                         <button type="submit" class="absolute -translate-y-1/2 left-4 top-1/2">
                             <svg class="fill-gray-500" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -51,21 +51,22 @@
                             </svg>
                         </button>
 
-                        <input type="text" name="search" value="{{ request('search') }}" placeholder="{{__('messages.Cari peserta')}}"
+                        <input type="text" name="search" value="{{ request('search') }}"
+                            placeholder="{{ __('messages.Cari peserta') }}"
                             class="h-[42px] w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pl-[42px] pr-4 text-sm text-gray-800 shadow-theme-xs placeholder:text-gray-400 focus:border-brand-300 focus:outline-none focus:ring-3 focus:ring-brand-500/10 xl:w-[300px]" />
                     </div>
 
                     <div x-data="{
                         selectedEvent: '{{ request('event_id', '') }}',
                         get isOptionSelected() { return this.selectedEvent !== ''; }
-                    }" class="w-fit">
+                    }" class="w-full sm:w-fit">
                         <div class="relative z-20 bg-transparent">
                             <select x-model="selectedEvent" name="event_id" @change="$el.form.submit()"
-                                class="shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] w-fit appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
+                                class="w-full sm:w-fit shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
                                 :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'">
 
                                 <option value="" class="text-gray-400">
-                                    {{__('messages.Semua Event')}}
+                                    {{ __('messages.Semua Event') }}
                                 </option>
 
                                 @foreach ($events as $event)
@@ -88,26 +89,26 @@
                     <div x-data="{
                         selectedStatus: '{{ request('status', '') }}',
                         get isOptionSelected() { return this.selectedStatus !== ''; }
-                    }" class="w-fit">
+                    }" class="w-full sm:w-fit">
                         <div class="relative z-20 bg-transparent">
                             <select x-model="selectedStatus" name="status" @change="$el.form.submit()"
-                                class="shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] w-fit appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
+                                class="w-full sm:w-fit shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] w-fit appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
                                 :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'">
 
                                 <option value="" class="text-gray-400">
-                                    {{__('messages.Semua Status')}}
+                                    {{ __('messages.Semua Status') }}
                                 </option>
 
                                 <option value="pending" class="text-gray-700">
-                                    {{__('messages.Pending')}}
+                                    {{ __('messages.Pending') }}
                                 </option>
 
                                 <option value="diterima" class="text-gray-700">
-                                    {{__('messages.Diterima')}}
+                                    {{ __('messages.Diterima') }}
                                 </option>
 
                                 <option value="ditolak" class="text-gray-700">
-                                    {{__('messages.Ditolak')}}
+                                    {{ __('messages.Ditolak') }}
                                 </option>
                             </select>
 
@@ -131,7 +132,7 @@
                         <thead>
                             <tr class="border-y border-gray-200">
                                 <th class="px-4 py-3 text-start text-theme-sm font-normal text-gray-500">
-                                    {{__('messages.Peserta')}}
+                                    {{ __('messages.Peserta') }}
                                 </th>
 
                                 <th class="px-4 py-3 text-start text-theme-sm font-normal text-gray-500">
@@ -139,7 +140,7 @@
                                 </th>
 
                                 <th class="px-4 py-3 text-start text-theme-sm font-normal text-gray-500">
-                                    {{__('messages.Tanggal Daftar')}}
+                                    {{ __('messages.Tanggal Daftar') }}
                                 </th>
 
                                 <th class="px-4 py-3 text-start text-theme-sm font-normal text-gray-500">
@@ -147,7 +148,7 @@
                                 </th>
 
                                 <th class="px-4 py-3 text-center text-theme-sm font-normal text-gray-500">
-                                    {{__('messages.Aksi')}}
+                                    {{ __('messages.Aksi') }}
                                 </th>
                             </tr>
                         </thead>
@@ -201,7 +202,7 @@
                                                         nama:'{{ $registration->user->name }}'
                                                     })"
                                                     class="rounded-lg bg-green-500 px-3 py-2 text-xs font-medium text-white hover:bg-green-600">
-                                                    {{__('messages.Terima')}}
+                                                    {{ __('messages.Terima') }}
                                                 </button>
                                             @endif
 
@@ -213,7 +214,7 @@
                                                         nama:'{{ $registration->user->name }}'
                                                     })"
                                                     class="rounded-lg bg-red-500 px-3 py-2 text-xs font-medium text-white hover:bg-red-600">
-                                                    {{__('messages.Tolak')}}
+                                                    {{ __('messages.Tolak') }}
                                                 </button>
                                             @endif
 
@@ -351,13 +352,13 @@
             <div class="text-center">
 
                 <h4 class="mb-2 text-lg font-semibold text-gray-800">
-                    {{__('messages.Konfirmasi Status')}}
+                    {{ __('messages.Konfirmasi Status') }}
                 </h4>
 
                 <p class="mb-6 text-sm text-gray-500">
-                    {{__('messages.Yakin ingin mengubah status')}}
+                    {{ __('messages.Yakin ingin mengubah status') }}
                     <span class="font-medium text-gray-700" x-text="nama"></span>
-                    {{__('messages.menjadi')}}
+                    {{ __('messages.menjadi') }}
                     <span class="font-semibold" x-text="status"></span>?
                 </p>
 
@@ -365,7 +366,7 @@
 
                     <button @click="open = false" type="button"
                         class="rounded-lg border border-gray-300 bg-white px-4 py-2.5 text-sm font-medium text-gray-700">
-                        {{__('messages.Batal')}}
+                        {{ __('messages.Batal') }}
                     </button>
 
                     <form :action="`/panitia/registrations/${registrationId}/status`" method="POST">
@@ -377,7 +378,7 @@
 
                         <button type="submit"
                             class="rounded-lg bg-blue-500 px-4 py-2.5 text-sm font-medium text-white hover:bg-blue-600">
-                            {{__('messages.Simpan')}}
+                            {{ __('messages.Simpan') }}
                         </button>
 
                     </form>

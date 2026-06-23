@@ -11,7 +11,7 @@ class EventController extends Controller
     public function index(Request $request)
     {
         // $query = Event::query();
-        $query = Event::query()->where('user_id', auth()->id());
+        $query = Event::query()->withCount('registrations')->where('user_id', auth()->id());
 
         if ($request->filled('search')) {
             $search = $request->search;
@@ -27,7 +27,6 @@ class EventController extends Controller
             'nama_za'       => $query->orderBy('nama', 'desc'),
             default         => $query->orderBy('tanggal', 'asc'),
         };
-
         $events = $query->paginate(5)->withQueryString();
 
         return view('pages.panitia.events.index', compact('events'));
@@ -36,13 +35,16 @@ class EventController extends Controller
     public function show(Event $event)
     {
         $this->authorize('view', $event);
-        $sudahDaftar = null;
 
-        if (auth()->check() && auth()->user()->isMahasiswa()) {
-            $sudahDaftar = $event->registrations()->where('user_id', auth()->id())->first();
-        }
+        $event->load('registrations.user');
+        $event->loadCount([
+            'registrations',
+            'registrations as pending_count'  => fn($q) => $q->where('status', 'pending'),
+            'registrations as diterima_count' => fn($q) => $q->where('status', 'diterima'),
+            'registrations as ditolak_count'  => fn($q) => $q->where('status', 'ditolak'),
+        ]);
 
-        return view('events.show', compact('event', 'sudahDaftar'));
+        return view('pages.panitia.events.show', compact('event'));
     }
 
     public function create()

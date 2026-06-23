@@ -16,10 +16,15 @@ class MahasiswaController extends Controller
 
     public function events()
     {
-        $eventSaya = auth()->user()
+        $query = auth()->user()
             ->registeredEvents()
-            ->orderBy('tanggal', 'desc')
-            ->get();
+            ->orderBy('tanggal', 'desc');
+
+        if ($status = request('status')) {
+            $query->wherePivot('status', $status);
+        }
+
+        $eventSaya = $query->get();
 
         return view('pages.mahasiswa.events', compact('eventSaya'));
     }

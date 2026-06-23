@@ -5,7 +5,7 @@ export const initChartOne = () => {
     const chartOneOptions = {
         series: [
             {
-                name: "Pendaftar",
+                name: window.translations.Pendaftar,
                 data: window.__chartOneData ?? [],
             },
         ],
@@ -62,7 +62,7 @@ export const initChartOne = () => {
         },
         tooltip: {
             y: {
-                formatter: (val) => `${val} pendaftar`,
+                formatter: (val) => `${val} ${window.translations.pendaftar}`,
             },
         },
     };

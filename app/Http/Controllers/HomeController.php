@@ -12,6 +12,7 @@ class HomeController extends Controller
         // Mengambil semua data event, diurutkan dari tanggal terdekat
         $events = Event::withCount('registrations')
             ->orderBy('tanggal', 'asc')
+            ->take(8)
             ->get();
 
         // Mengembalikan view (sesuaikan nama file blade Anda, contoh: 'events.index')

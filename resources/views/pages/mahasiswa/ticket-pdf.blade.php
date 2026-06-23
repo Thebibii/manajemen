@@ -192,7 +192,7 @@
 
                         <div class="badges">
                             <span class="badge">
-                                {{ $registration->event->tanggal->translatedFormat('d M Y') }}
+                                {{ $registration->event->tanggal->translatedFormat('l, d F Y') }}
                             </span>
 
                             <span class="badge">

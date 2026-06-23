@@ -48,8 +48,9 @@
 
             <!-- Logo (mobile only) -->
             <a href="/" class="xl:hidden">
-                <img class="dark:hidden" src="/images/logo/logo.svg" alt="Logo" />
-                <img class="hidden" src="/images/logo/logo-dark.svg" alt="Logo" />
+                {{-- <img class="dark:hidden" src="/images/logo/logo.svg" alt="Logo" /> --}}
+                <p class="text-xl font-bold text-slate-800 dark:text-white white-space-nowrap">Event Kampus</p>
+                {{-- <img class="hidden" src="/images/logo/logo-dark.svg" alt="Logo" /> --}}
             </a>
 
             <!-- Application Menu Toggle (mobile only) -->
@@ -108,14 +109,17 @@
                             fill="currentColor" />
                     </svg>
                 </button> --}}
-                <x-header.lang-dropdown />
 
                 <!-- Notification Dropdown -->
-                <x-header.notification-dropdown />
+                {{-- <x-header.notification-dropdown /> --}}
             </div>
 
             <!-- User Dropdown -->
-            <x-header.user-dropdown />
+            <div class="flex gap-3">
+
+                <x-header.lang-dropdown />
+                <x-header.user-dropdown />
+            </div>
         </div>
     </div>
 </header>

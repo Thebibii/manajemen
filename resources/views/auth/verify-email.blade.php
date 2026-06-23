@@ -1,35 +1,3 @@
-{{-- <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
-    </div>
-
-    @if (session('status') == 'verification-link-sent')
-        <div class="mb-4 font-medium text-sm text-green-600">
-            {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-        </div>
-    @endif
-
-    <div class="mt-4 flex items-center justify-between">
-        <form method="POST" action="{{ route('verification.send') }}">
-            @csrf
-
-            <div>
-                <x-primary-button>
-                    {{ __('Resend Verification Email') }}
-                </x-primary-button>
-            </div>
-        </form>
-
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-
-            <button type="submit"
-                class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                {{ __('Log Out') }}
-            </button>
-        </form>
-    </div>
-</x-guest-layout> --}}
 @extends('layouts.fullscreen-layout')
 
 @section('content')
@@ -38,7 +6,7 @@
 
             <!-- Content -->
             <div class="flex w-full flex-1 flex-col lg:w-1/2">
-                <div class="mx-auto w-full max-w-md pt-10">
+                <div class="mx-auto w-full flex justify-between items-center max-w-md pt-10">
                     <a href="{{ route('welcome') }}"
                         class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700">
                         <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
@@ -46,8 +14,9 @@
                             <path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="currentColor" stroke-width="1.5"
                                 stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
-                        Kembali ke Beranda
+                        {{ __('messages.Kembali ke Beranda') }}
                     </a>
+                    <x-header.lang-dropdown />
                 </div>
 
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
@@ -121,13 +90,11 @@
                     <x-common.common-grid-shape />
 
                     <div class="flex max-w-xs flex-col items-center">
-                        <a href="{{ url('/') }}" class="mb-4 block">
-                            <img src="./images/logo/auth-logo.svg" alt="Logo" />
+                        <a href="{{ route('welcome') }}" class="mb-4 block text-title-md text-white">
+                            Event Kampus
                         </a>
-
                         <p class="text-center text-gray-400">
-                            Verifikasi email diperlukan untuk memastikan keamanan akun
-                            dan mengaktifkan seluruh fitur sistem.
+                            {{ __('messages.Temukan dan Kelola') }} {{ __('messages.Kegiatan Kampus dengan Mudah') }}
                         </p>
                     </div>
                 </div>

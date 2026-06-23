@@ -3,21 +3,20 @@
 @section('content')
     <div class="grid grid-cols-12 gap-4 md:gap-6">
         <div class="col-span-12">
-            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
+            <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 md:gap-6">
 
                 {{-- Total Events --}}
                 <div class="rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
                     <div class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl">
-                        <svg class="fill-gray-800" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8 2a1 1 0 0 1 1 1v1h6V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1Zm-2 6a1 1 0 0 0 0 2h12a1 1 0 1 0 0-2H6Z"
-                                fill="" />
+                                d="M3.25 5.5C3.25 4.25736 4.25736 3.25 5.5 3.25H18.5C19.7426 3.25 20.75 4.25736 20.75 5.5V18.5C20.75 19.7426 19.7426 20.75 18.5 20.75H5.5C4.25736 20.75 3.25 19.7426 3.25 18.5V5.5ZM5.5 4.75C5.08579 4.75 4.75 5.08579 4.75 5.5V8.58325L19.25 8.58325V5.5C19.25 5.08579 18.9142 4.75 18.5 4.75H5.5ZM19.25 10.0833H15.416V13.9165H19.25V10.0833ZM13.916 10.0833L10.083 10.0833V13.9165L13.916 13.9165V10.0833ZM8.58301 10.0833H4.75V13.9165H8.58301V10.0833ZM4.75 18.5V15.4165H8.58301V19.25H5.5C5.08579 19.25 4.75 18.9142 4.75 18.5ZM10.083 19.25V15.4165L13.916 15.4165V19.25H10.083ZM15.416 19.25V15.4165H19.25V18.5C19.25 18.9142 18.9142 19.25 18.5 19.25H15.416Z"
+                                fill="currentColor"></path>
                         </svg>
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">{{__('messages.Total Event')}}</span>
+                            <span class="text-sm text-gray-500">{{ __('messages.Total Event') }}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalEvents }}</h4>
                         </div>
                     </div>
@@ -26,16 +25,16 @@
                 {{-- Total Pendaftar --}}
                 <div class="rounded-2xl border border-gray-200 bg-white p-5 md:p-6">
                     <div class="flex items-center justify-center w-12 h-12 bg-gray-100 rounded-xl">
-                        <svg class="fill-gray-800" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.80443 5.60156C7.59109 5.60156 6.60749 6.58517 6.60749 7.79851C6.60749 9.01185 7.59109 9.99545 8.80443 9.99545C10.0178 9.99545 11.0014 9.01185 11.0014 7.79851C11.0014 6.58517 10.0178 5.60156 8.80443 5.60156ZM5.10749 7.79851C5.10749 5.75674 6.76267 4.10156 8.80443 4.10156C10.8462 4.10156 12.5014 5.75674 12.5014 7.79851C12.5014 9.84027 10.8462 11.4955 8.80443 11.4955C6.76267 11.4955 5.10749 9.84027 5.10749 7.79851ZM4.86252 15.3208C4.08769 16.0881 3.70377 17.0608 3.51705 17.8611C3.48384 18.0034 3.5211 18.1175 3.60712 18.2112C3.70161 18.3141 3.86659 18.3987 4.07591 18.3987H13.4249C13.6343 18.3987 13.7992 18.3141 13.8937 18.2112C13.9797 18.1175 14.017 18.0034 13.9838 17.8611C13.7971 17.0608 13.4132 16.0881 12.6383 15.3208C11.8821 14.572 10.6899 13.955 8.75042 13.955C6.81096 13.955 5.61877 14.572 4.86252 15.3208ZM3.8071 14.2549C4.87163 13.2009 6.45602 12.455 8.75042 12.455C11.0448 12.455 12.6292 13.2009 13.6937 14.2549C14.7397 15.2906 15.2207 16.5607 15.4446 17.5202C15.7658 18.8971 14.6071 19.8987 13.4249 19.8987H4.07591C2.89369 19.8987 1.73504 18.8971 2.05628 17.5202C2.28015 16.5607 2.76117 15.2906 3.8071 14.2549Z"
-                                fill="" />
+                                d="M12 3.5C7.30558 3.5 3.5 7.30558 3.5 12C3.5 14.1526 4.3002 16.1184 5.61936 17.616C6.17279 15.3096 8.24852 13.5955 10.7246 13.5955H13.2746C15.7509 13.5955 17.8268 15.31 18.38 17.6167C19.6996 16.119 20.5 14.153 20.5 12C20.5 7.30558 16.6944 3.5 12 3.5ZM17.0246 18.8566V18.8455C17.0246 16.7744 15.3457 15.0955 13.2746 15.0955H10.7246C8.65354 15.0955 6.97461 16.7744 6.97461 18.8455V18.856C8.38223 19.8895 10.1198 20.5 12 20.5C13.8798 20.5 15.6171 19.8898 17.0246 18.8566ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM11.9991 7.25C10.8847 7.25 9.98126 8.15342 9.98126 9.26784C9.98126 10.3823 10.8847 11.2857 11.9991 11.2857C13.1135 11.2857 14.0169 10.3823 14.0169 9.26784C14.0169 8.15342 13.1135 7.25 11.9991 7.25ZM8.48126 9.26784C8.48126 7.32499 10.0563 5.75 11.9991 5.75C13.9419 5.75 15.5169 7.32499 15.5169 9.26784C15.5169 11.2107 13.9419 12.7857 11.9991 12.7857C10.0563 12.7857 8.48126 11.2107 8.48126 9.26784Z"
+                                fill="currentColor"></path>
                         </svg>
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">{{__('messages.Total Pendaftar')}}</span>
+                            <span class="text-sm text-gray-500">{{ __('messages.Total Pendaftar') }}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalPendaftar }}</h4>
                         </div>
                     </div>
@@ -53,7 +52,7 @@
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">{{__('messages.Menunggu Approval')}}</span>
+                            <span class="text-sm text-gray-500">{{ __('messages.Menunggu Approval') }}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalPending }}</h4>
                         </div>
                         @if ($totalPendaftar > 0)
@@ -77,7 +76,7 @@
                     </div>
                     <div class="flex items-end justify-between mt-5">
                         <div>
-                            <span class="text-sm text-gray-500">{{__('messages.Pendaftar Diterima')}}</span>
+                            <span class="text-sm text-gray-500">{{ __('messages.Pendaftar Diterima') }}</span>
                             <h4 class="mt-2 font-bold text-gray-800 text-title-sm">{{ $totalDiterima }}</h4>
                         </div>
                         @if ($totalPendaftar > 0)
@@ -95,7 +94,7 @@
             <div class="rounded-2xl border border-gray-200 bg-white px-5 pt-5 sm:px-6 sm:pt-6">
                 <div class="flex items-center justify-between">
                     <h3 class="text-lg font-semibold text-gray-800">
-                        {{__('messages.Pendaftar per Event')}}
+                        {{ __('messages.Pendaftar per Event') }}
                     </h3>
                 </div>
 
@@ -107,6 +106,11 @@
             <script>
                 window.__chartOneLabels = @json($eventLabels);
                 window.__chartOneData = @json($eventData);
+
+                window.translations = {
+                    pendaftar: @json(__('messages.pendaftar')),
+                    Pendaftar: @json(__('messages.Pendaftar')),
+                };
             </script>
 
         </div>
@@ -114,10 +118,10 @@
             <div class="rounded-2xl border border-gray-200 bg-white p-5 sm:p-6">
                 <div>
                     <h3 class="text-lg font-semibold text-gray-800">
-                        {{__('messages.Status Registrasi')}}
+                        {{ __('messages.Status Registrasi') }}
                     </h3>
                     <p class="mt-1 text-theme-sm text-gray-500">
-                        {{__('messages.Distribusi status pendaftar seluruh event')}}
+                        {{ __('messages.Distribusi status pendaftar seluruh event') }}
                     </p>
                 </div>
 

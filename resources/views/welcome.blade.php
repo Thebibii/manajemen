@@ -8,14 +8,14 @@
                 <div class="space-y-8">
                     <div>
                         <h1 class="font-outfit text-title-md  sm:text-title-lg lg:text-title-xl font-bold text-gray-900">
-                            {{__('messages.Temukan dan Kelola')}}
+                            {{ __('messages.Temukan dan Kelola') }}
                             <span class="block text-brand-600">
-                                {{__('messages.Kegiatan Kampus dengan Mudah')}}
+                                {{ __('messages.Kegiatan Kampus dengan Mudah') }}
                             </span>
                         </h1>
 
                         <p class="mt-6 max-w-xl text-gray-500 text-sm sm:text-base ">
-                            {{__('messages.hero_description')}}
+                            {{ __('messages.hero_description') }}
                         </p>
                     </div>
 
@@ -24,7 +24,7 @@
                         <a href="{{ route('explore') }}"
                             class="inline-flex items-center gap-2 px-4 py-2 text-sm sm:text-base sm:px-6 sm:py-3 rounded-xl bg-brand-600 text-white shadow-theme-md hover:bg-brand-700 transition-all duration-300">
 
-                            {{__('messages.Lihat Event')}}
+                            {{ __('messages.Lihat Event') }}
 
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor">
@@ -52,7 +52,8 @@
 
                                 <img src="https://picsum.photos/seed/1-festival-alternative/1600/900"
                                     alt="NOISE FESTIVAL 2024"
-                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+                                    class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                    loading="lazy">
 
                             </div>
 
@@ -117,17 +118,17 @@
 
                 <div>
                     <h2 class="font-outfit text-title-sm font-bold text-gray-900">
-                        {{__('messages.Event Terdekat')}}
+                        {{ __('messages.Event Terdekat') }}
                     </h2>
 
                     <p class="mt-2 text-gray-500 max-w-2xl ">
-                        {{__('messages.tp2')}}
+                        {{ __('messages.tp2') }}
                     </p>
                 </div>
 
                 <a href="{{ route('explore') }}"
                     class="inline-flex items-center gap-2 text-brand-600 font-medium hover:text-brand-700 transition">
-                    {{__('messages.Lihat Semua')}}
+                    {{ __('messages.Lihat Semua') }}
 
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
@@ -157,7 +158,8 @@
                                 <div class="relative aspect-video overflow-hidden bg-gray-100">
                                     @if ($event->gambar)
                                         <img src="{{ Storage::url($event->gambar) }}" alt="{{ $event->nama }}"
-                                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                            loading="lazy">
                                     @else
                                         <div class="flex h-full w-full items-center justify-center">
                                             <div class="text-center">
@@ -176,7 +178,7 @@
                                                 </svg>
 
                                                 <p class="mt-2 text-sm text-gray-500">
-                                                    {{__('messages.Gambar belum tersedia')}}
+                                                    {{ __('messages.Gambar belum tersedia') }}
                                                 </p>
                                             </div>
                                         </div>
@@ -239,7 +241,7 @@
                                                 <path d="M16 18h.01" />
                                             </svg>
 
-                                            <span>{{ $event->tanggal->translatedFormat('d M Y • H:i') }}</span>
+                                            <span>{{ $event->tanggal->translatedFormat('l, d F Y • H:i') }}</span>
 
                                         </div>
 

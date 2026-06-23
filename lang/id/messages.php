@@ -21,7 +21,7 @@ return [
     "Explore" => "Jelajah",
     "Kontak" => "Kontak",
 
-    
+
     "Kebijakan Privasi" => "Kebijakan Privasi",
     "Syarat & Ketentuan" => "Syarat & Ketentuan",
     "Semua hak dilindungi." => "Semua hak dilindungi.",
@@ -31,13 +31,13 @@ return [
     "Profil" => "Profil",
     "Temukan dan Kelola" => "Temukan dan Kelola",
     "Kegiatan Kampus dengan Mudah" => "Kegiatan Kampus dengan Mudah",
-    
+
     "hero_description" => "Event Kampus adalah platform yang memudahkan mahasiswa, organisasi, dan pihak kampus dalam menemukan, mengelola, serta mengikuti berbagai kegiatan.",
-    
+
     "Lihat Event" => "Lihat Event",
     "Event Terdekat" => "Event Terdekat",
     "Lihat Semua" => "Lihat Semua",
-    
+
     "Coming Soon" => "Segera Hadir",
     "Deskripsi" => "Deskripsi",
     "Tanggal" => "Tanggal",
@@ -122,7 +122,7 @@ return [
     "menjadi" => "menjadi",
     "Pendaftar" => "Pendaftar",
     "pendaftar" => "pendaftar",
-    "Lihat Detail" => "Lihat detail",
+    "Detail" => "Detail",
     "Hapus" => "Hapus",
     "Masukkan nama event" => "Masukkan Nama Event",
     "Jelaskan detail mengenai event ini..." => "Jelaskan detail mengenai event ini...",
@@ -138,11 +138,13 @@ return [
     "Kosongkan jika tidak ingin mengganti gambar." => "Kosongkan jika tidak ingin mengganti gambar.",
     "Perbarui Event" => "Perbarui Event",
     "Simpan" => "Simpan",
-    
+    'Detail Event' => 'Detail Event',
+    'Kembali ke Beranda' => 'Kembali ke Beranda',
+
     //teks panjang
     "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
     "tp2" => "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat.",
     "tp3" => "Kelola peserta yang mendaftar ke event Anda",
     "tp4" => "Contoh: Gedung Serbaguna / Zoom Meeting",
-    ];
-    
+
+];
