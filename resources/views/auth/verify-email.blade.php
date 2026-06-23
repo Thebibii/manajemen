@@ -22,19 +22,17 @@
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
                     <div class="mb-5 sm:mb-8">
                         <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800">
-                            Verifikasi Email Anda
+                            {{ __('messages.Verifikasi Email Anda') }}
                         </h1>
 
                         <p class="text-sm text-gray-500">
-                            Kami telah mengirimkan tautan verifikasi ke alamat email Anda.
-                            Silakan buka email tersebut dan klik tombol verifikasi untuk
-                            mengaktifkan akun Anda.
+                            {{ __('messages.tp5') }}
                         </p>
                     </div>
 
                     @if (session('status') === 'verification-link-sent')
                         <div class="mb-5 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-700">
-                            Tautan verifikasi baru telah berhasil dikirim ke alamat email Anda.
+                            {{ __('messages.tp6') }}
                         </div>
                     @endif
 
@@ -43,7 +41,7 @@
                         <!-- Email Information -->
                         <div class="rounded-lg border border-gray-200 bg-gray-50 p-4">
                             <p class="text-sm text-gray-500">
-                                Email verifikasi dikirim ke:
+                                {{ __('messages.Email verifikasi dikirim ke:') }}
                             </p>
 
                             <p class="mt-1 font-medium text-gray-800">
@@ -57,7 +55,7 @@
 
                             <button type="submit"
                                 class="bg-brand-500 shadow-theme-xs hover:bg-brand-600 flex w-full items-center justify-center rounded-lg px-4 py-3 text-sm font-medium text-white transition">
-                                Kirim Ulang Email Verifikasi
+                                {{ __('messages.Kirim Ulang Email Verifikasi') }}
                             </button>
                         </form>
 
@@ -67,7 +65,7 @@
 
                             <button type="submit"
                                 class="shadow-theme-xs hover:bg-gray-100 flex w-full items-center justify-center rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-medium text-gray-700 transition">
-                                Keluar dari Akun
+                                {{ __('messages.Keluar dari Akun') }}
                             </button>
                         </form>
 
@@ -75,8 +73,8 @@
 
                     <div class="mt-5">
                         <p class="text-center text-sm text-gray-500">
-                            Tidak menemukan email?
-                            Periksa folder <span class="font-medium">Spam</span> atau
+                            {{ __('messages.Tidak menemukan email?') }}
+                            Periksa folder <span class="font-medium">Spam</span> {{ __('messages.atau') }}
                             <span class="font-medium">Promosi</span>.
                         </p>
                     </div>
@@ -94,7 +92,9 @@
                             Event Kampus
                         </a>
                         <p class="text-center text-gray-400">
-                            {{ __('messages.Temukan dan Kelola') }} {{ __('messages.Kegiatan Kampus dengan Mudah') }}
+                            <<<<<<< HEAD {{ __('messages.Temukan dan Kelola') }}
+                                {{ __('messages.Kegiatan Kampus dengan Mudah') }}======={{ __('messages.tp7') }}>>>>>>>
+                                rozi
                         </p>
                     </div>
                 </div>
