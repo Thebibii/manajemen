@@ -130,63 +130,16 @@
                     <div id="chartSeven" class="h-[212px] w-full"></div>
                 </div>
 
-                {{-- @php
-                    $total = $totalPendaftar > 0 ? $totalPendaftar : 1;
-                    $statuses = [
-                        [
-                            'label' => 'Diterima',
-                            'count' => $totalDiterima,
-                            'percentage' => round(($totalDiterima / $total) * 100),
-                            'color' => 'bg-success-500',
-                        ],
-                        [
-                            'label' => 'Pending',
-                            'count' => $totalPending,
-                            'percentage' => round(($totalPending / $total) * 100),
-                            'color' => 'bg-warning-500',
-                        ],
-                        [
-                            'label' => 'Ditolak',
-                            'count' => $totalDitolak,
-                            'percentage' => round(($totalDitolak / $total) * 100),
-                            'color' => 'bg-error-500',
-                        ],
-                    ];
-                @endphp
-
-                <div class="space-y-5">
-                    @foreach ($statuses as $status)
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="w-3 h-3 rounded-full {{ $status['color'] }}"></div>
-                                <div>
-                                    <p class="text-theme-sm font-semibold text-gray-800">
-                                        {{ $status['label'] }}
-                                    </p>
-                                    <span class="block text-theme-xs text-gray-500">
-                                        {{ $status['count'] }} Pendaftar
-                                    </span>
-                                </div>
-                            </div>
-
-                            <div class="flex w-full max-w-[140px] items-center gap-3">
-                                <div class="relative block h-2 w-full max-w-[100px] rounded-sm bg-gray-200">
-                                    <div class="absolute left-0 top-0 flex h-full items-center justify-center rounded-sm {{ $status['color'] }}"
-                                        style="width: {{ $status['percentage'] }}%"></div>
-                                </div>
-                                <p class="text-theme-sm font-medium text-gray-800">
-                                    {{ $status['percentage'] }}%
-                                </p>
-                            </div>
-                        </div>
-                    @endforeach
-                </div> --}}
             </div>
 
             <script>
                 window.__chartSevenData = {
                     labels: ['Diterima', 'Pending', 'Ditolak'],
                     series: [{{ $totalDiterima }}, {{ $totalPending }}, {{ $totalDitolak }}],
+                };
+                window.translations = {
+                    pendaftar: @json(__('messages.pendaftar')),
+                    Pendaftar: @json(__('messages.Pendaftar')),
                 };
             </script>
         </div>

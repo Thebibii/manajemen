@@ -40,7 +40,7 @@ export const initChartSeven = () => {
         legend: { show: false },
         tooltip: {
             y: {
-                formatter: (val) => `${val} pendaftar`,
+                formatter: (val) => `${val}  ${window.translations.pendaftar}`,
             },
         },
     };
