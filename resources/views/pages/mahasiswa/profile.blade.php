@@ -6,7 +6,8 @@
         {{-- ===================== --}}
         {{-- 1. INFORMASI PROFIL  --}}
         {{-- ===================== --}}
-        <x-common.component-card title="{{__('messages.Informasi Profil')}}" desc="{{__('messages.Perbarui nama dan alamat email akun Anda.')}}">
+        <x-common.component-card title="{{ __('messages.Informasi Profil') }}"
+            desc="{{ __('messages.Perbarui nama dan alamat email akun Anda.') }}">
 
             <form method="post" action="{{ route('profile.update') }}" class="space-y-5">
                 @csrf
@@ -23,7 +24,7 @@
                 {{-- Email --}}
                 <div>
                     <x-input-label for="email" :value="__('messages.Alamat Email')" />
-                    <x-text-input id="email" name="email" disabled="true" type="email" class="mt-1 block w-full"
+                    <x-text-input id="email" name="email" readonly="true" type="email" class="mt-1 block w-full"
                         :value="old('email', $user->email)" required autocomplete="username" />
                     <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
@@ -57,8 +58,7 @@
         {{-- ================== --}}
         {{-- 2. UBAH PASSWORD   --}}
         {{-- ================== --}}
-        <x-common.component-card title="{{__('messages.Ubah Password')}}"
-            desc="{{__('messages.Desc Password')}}">
+        <x-common.component-card title="{{ __('messages.Ubah Password') }}" desc="{{ __('messages.Desc Password') }}">
 
             <form method="post" action="{{ route('password.update') }}" class="space-y-5">
                 @csrf

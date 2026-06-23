@@ -92,7 +92,7 @@
 
             </svg>
 
-            Keluar
+            {{ __('messages.Keluar') }}
 
         </button>
     </form>

@@ -67,7 +67,7 @@ class HomeController extends Controller
             default         => $query->orderBy('tanggal', 'asc'),
         };
 
-        $events = $query->paginate(4)->withQueryString();
+        $events = $query->paginate(16)->withQueryString();
 
         return view('pages.explore', compact('events'));
     }
