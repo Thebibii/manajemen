@@ -10,7 +10,8 @@ class EventController extends Controller
 {
     public function index(Request $request)
     {
-        $query = Event::query();
+        // $query = Event::query();
+        $query = Event::query()->where('user_id', auth()->id());
 
         if ($request->filled('search')) {
             $search = $request->search;
@@ -34,6 +35,7 @@ class EventController extends Controller
 
     public function show(Event $event)
     {
+        $this->authorize('view', $event);
         $sudahDaftar = null;
 
         if (auth()->check() && auth()->user()->isMahasiswa()) {

@@ -72,24 +72,31 @@
                     }
                 }
             });
+
+            // Di dalam document.addEventListener('alpine:init', () => { ... })
+            // Tambah di bawah store 'sidebar'
+
+            Alpine.store('notification', {
+                show: false,
+                type: 'success',
+                message: '',
+                _timer: null,
+
+                fire(type, message, duration = 4000) {
+                    this.type = type;
+                    this.message = message;
+                    this.show = true;
+                    clearTimeout(this._timer);
+                    this._timer = setTimeout(() => this.show = false, duration);
+                },
+
+                close() {
+                    this.show = false;
+                    clearTimeout(this._timer);
+                }
+            });
         });
     </script>
-
-    <!-- Apply dark mode immediately to prevent flash -->
-    {{-- <script>
-        (function() {
-            const savedTheme = localStorage.getItem('theme');
-            const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-            const theme = savedTheme || systemTheme;
-            if (theme === 'dark') {
-                document.documentElement.classList.add('dark');
-                document.body.classList.add('dark', 'bg-gray-900');
-            } else {
-                document.documentElement.classList.remove('dark');
-                document.body.classList.remove('dark', 'bg-gray-900');
-            }
-        })();
-    </script> --}}
 
 </head>
 
@@ -128,6 +135,8 @@ window.addEventListener('resize', checkMobile);">
         </div>
 
     </div>
+
+    <x-common.notification />
 
 </body>
 

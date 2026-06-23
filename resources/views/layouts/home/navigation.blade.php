@@ -33,6 +33,7 @@
             <!-- Right Section -->
             <div class="flex items-center justify-end gap-3">
 
+                {{-- <button @click="$store.notification.fire('success', 'Test!')">Test</button> --}}
                 <x-header.lang-dropdown />
 
                 @guest

@@ -9,11 +9,6 @@
                 <x-ui.button variant="primary">Tambah form</x-ui.button>
             </a>
         </x-slot:action>
-        @if (session('success'))
-            <div class="mb-4 rounded-lg bg-green-50 px-4 py-3 text-sm text-green-700">
-                {{ session('success') }}
-            </div>
-        @endif
 
         <div class="rounded-2xl border border-gray-200 bg-white pt-4">
             <!-- Header -->

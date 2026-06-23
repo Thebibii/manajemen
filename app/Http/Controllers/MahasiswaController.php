@@ -16,7 +16,11 @@ class MahasiswaController extends Controller
 
     public function events()
     {
-        $eventSaya = auth()->user()->registeredEvents; // Collection of Event, masing-masing punya ->pivot->status
+        $eventSaya = auth()->user()
+            ->registeredEvents()
+            ->orderBy('tanggal', 'desc')
+            ->get();
+
         return view('pages.mahasiswa.events', compact('eventSaya'));
     }
 }

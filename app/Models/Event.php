@@ -28,8 +28,14 @@ class Event extends Model
         return $this->registrations()->where('status', 'diterima')->count();
     }
 
-    public function sisaKuota(): int
+    // public function sisaKuota(): int
+    // {
+    //     return max(0, $this->kuota - $this->jumlahDiterima());
+    // }
+
+    // App/Models/Event.php
+    public function getSisaKuotaAttribute(): int
     {
-        return max(0, $this->kuota - $this->jumlahDiterima());
+        return $this->kuota - $this->registrations_count;
     }
 }

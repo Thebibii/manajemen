@@ -108,6 +108,7 @@
                             fill="currentColor" />
                     </svg>
                 </button> --}}
+                <x-header.lang-dropdown />
 
                 <!-- Notification Dropdown -->
                 <x-header.notification-dropdown />

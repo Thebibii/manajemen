@@ -118,6 +118,7 @@
             <div class="mt-6 grid grid-cols-2 gap-3">
 
                 <a href="{{ route('mahasiswa.ticket.download', $registration) }}"
+                    @click="$store.notification.fire('success', 'Tiket sedang diunduh!')"
                     class="flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50">
                     Unduh Tiket
                 </a>

@@ -73,7 +73,6 @@ export const initChartOne = () => {
         const chart = new ApexCharts(chartElement, chartOneOptions);
         chart.render();
     }, 150);
-    return chart;
 };
 
 export default initChartOne;
