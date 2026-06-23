@@ -141,6 +141,7 @@ return [
     "Simpan" => "Save",
     'Detail Event' => 'Detail Event',
     'Kembali ke Beranda' => 'Back to Home',
+    'error_404' => "We can't seem to find the page you are looking for!",
 
     "Back to Home" => "Back to Home",
     "Back to Login" => "Back to Login",

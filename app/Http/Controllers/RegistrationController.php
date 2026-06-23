@@ -34,7 +34,7 @@ class RegistrationController extends Controller
                 ]);
             });
 
-            return back()->with('success', 'Pendaftaran berhasil, menunggu konfirmasi panitia.');
+            return back()->with('success', __('messages.Pendaftaran berhasil, menunggu konfirmasi panitia.'));
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -114,7 +114,7 @@ class RegistrationController extends Controller
                 $registration->save();
             });
 
-            return back()->with('success', 'Status pendaftaran diperbarui.');
+            return back()->with('success', __('messages.Status pendaftaran diperbarui.'));
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }

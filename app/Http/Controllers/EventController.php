@@ -71,7 +71,7 @@ class EventController extends Controller
         $data['user_id'] = auth()->id();
         Event::create($data);
 
-        return redirect()->route('panitia.events.index')->with('success', 'Event berhasil dibuat.');
+        return redirect()->route('panitia.events.index')->with('success', __('messages.Event berhasil dibuat.'));
     }
 
     public function edit(Event $event)
@@ -106,7 +106,7 @@ class EventController extends Controller
 
         $event->update($data);
 
-        return redirect()->route('panitia.events.index')->with('success', 'Event berhasil diperbarui.');
+        return redirect()->route('panitia.events.index')->with('success', __('messages.Event berhasil diperbarui'));
     }
 
     public function destroy(Event $event)
@@ -114,6 +114,6 @@ class EventController extends Controller
         $this->authorize('delete', $event);
         $event->delete();
 
-        return redirect()->route('panitia.events.index')->with('success', 'Event berhasil dihapus.');
+        return redirect()->route('panitia.events.index')->with('success', __('messages.Event berhasil dihapus.'));
     }
 }

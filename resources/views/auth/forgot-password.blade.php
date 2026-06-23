@@ -31,16 +31,17 @@
         <div class="relative flex h-screen w-full flex-col justify-center sm:p-0 lg:flex-row">
 
             <div class="flex w-full flex-1 flex-col lg:w-1/2">
-                <div class="mx-auto w-full max-w-md pt-10">
-                    <a href="{{ route('login') }}"
-                        class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700  ">
+                <div class="mx-auto w-full flex justify-between items-center max-w-md pt-10">
+                    <a href="{{ route('welcome') }}"
+                        class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700">
                         <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                             viewBox="0 0 20 20" fill="none">
                             <path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="currentColor" stroke-width="1.5"
-                                stroke-linecap="round" stroke-linejoin="round" />
+                                stroke-linecap="round" stroke-linejoin="round"></path>
                         </svg>
-                        Back to Login
+                        {{ __('messages.Kembali ke Beranda') }}
                     </a>
+                    <x-header.lang-dropdown />
                 </div>
 
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
