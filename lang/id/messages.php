@@ -124,10 +124,25 @@ return [
     "pendaftar" => "pendaftar",
     "Lihat Detail" => "Lihat detail",
     "Hapus" => "Hapus",
-
+    "Masukkan nama event" => "Masukkan Nama Event",
+    "Jelaskan detail mengenai event ini..." => "Jelaskan detail mengenai event ini...",
+    "Tanggal & Waktu Pelaksanaan" => "Tanggal & Waktu Pelaksanaan",
+    "Kuota Peserta" => "Kuota Peserta",
+    "Upload Gambar Event" => "Upload Gambar Event",
+    "Belum ada gambar dipilih" => "Belum ada gambar dipilih",
+    "Buat Event" => "Buat Event",
+    "Buat Event Baru" => "Buat Event Baru",
+    "Simpan Event" => "Simpan Event",
+    "Gambar Event" => "Gambar Event",
+    "Belum ada gambar" => "Belum ada gambar",
+    "Kosongkan jika tidak ingin mengganti gambar." => "Kosongkan jika tidak ingin mengganti gambar.",
+    "Perbarui Event" => "Perbarui Event",
+    "Simpan" => "Simpan",
+    
     //teks panjang
     "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
     "tp2" => "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat.",
-    "tp3" => "Kelola peserta yang mendaftar ke event Anda"
+    "tp3" => "Kelola peserta yang mendaftar ke event Anda",
+    "tp4" => "Contoh: Gedung Serbaguna / Zoom Meeting",
     ];
     

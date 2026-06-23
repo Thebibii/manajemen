@@ -123,10 +123,26 @@ return [
     "pendaftar" => "applicants",
     "Lihat Detail" => "View details",
     "Hapus" => "Delete",
+    "Masukkan nama event" => "Enter event name",
+    "Jelaskan detail mengenai event ini..." => "Please provide details about this event...",
+    "Tanggal & Waktu Pelaksanaan" => "Date & Time of the Event",
+    "Kuota Peserta" => "Participant Quota",
+    "Upload Gambar Event" => "Upload Event Photos",
+    "Belum ada gambar dipilih" => "No image has been selected yet",
+    "Buat Event" => "Create an Event",
+    "Buat Event Baru" => "Create a New Event",
+    "Simpan Event" => "Save Event",
+    "Gambar Event" => "Event Photos",
+    "Belum ada gambar" => "No pictures yet",
+    "Kosongkan jika tidak ingin mengganti gambar." => "Leave this blank if you don't want to change the image.",
+    "Perbarui Event" => "Update Event",
+    "Tidak ada event ditemukan." => "No events found.",
+    "Simpan" => "Save",
 
     //teks panjang
     "tp2" => "Find the best concerts, festivals, and music shows that will take place soon.",
     "home_tp" => "A ticket platform for art communities, creative communities, and live music lovers in Indonesia.Find the best events, buy tickets easily, and enjoy a hassle-free experience.",
     "tp3" => "Manage participants who have registered for your event",
+    "tp4" => "Example: Gedung Serbaguna / Zoom Meeting"
     ];
     

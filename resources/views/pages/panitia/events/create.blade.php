@@ -1,18 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-common.page-breadcrumb pageTitle="From Elements" />
-    <x-common.component-card title="Buat Event Baru">
+    <x-common.page-breadcrumb pageTitle="{{__('messages.Buat Event')}}" />
+    <x-common.component-card title="{{__('messages.Buat Event Baru')}}">
         <form action="{{ route('panitia.events.store') }}" method="POST" class="space-y-5" enctype="multipart/form-data">
             @csrf
 
             <!-- Nama Event -->
             <div>
                 <label for="nama" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    Nama Event
+                    {{__('messages.Nama Event')}}
                 </label>
                 <input type="text" id="nama" name="nama" value="{{ old('nama') }}"
-                    placeholder="Masukkan nama event"
+                    placeholder="{{__('messages.Masukkan nama event')}}"
                     class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden @error('nama') border-red-500 @enderror" />
                 @error('nama')
                     <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span>
@@ -22,9 +22,9 @@
             <!-- Deskripsi Event -->
             <div>
                 <label for="deskripsi" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    Deskripsi
+                    {{__('messages.Deskripsi')}}
                 </label>
-                <textarea id="deskripsi" name="deskripsi" rows="4" placeholder="Jelaskan detail mengenai event ini..."
+                <textarea id="deskripsi" name="deskripsi" rows="4" placeholder="{{__('messages.Jelaskan detail mengenai event ini...')}}"
                     class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden @error('deskripsi') border-red-500 @enderror">{{ old('deskripsi') }}</textarea>
                 @error('deskripsi')
                     <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span>
@@ -34,7 +34,7 @@
             <!-- Tanggal dan Waktu Event -->
             <div>
                 <label for="tanggal" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    Tanggal & Waktu Pelaksanaan
+                    {{__('messages.Tanggal & Waktu Pelaksanaan')}}
                 </label>
                 <input type="datetime-local" id="tanggal" name="tanggal" value="{{ old('tanggal') }}"
                     class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:ring-3 focus:outline-hidden @error('tanggal') border-red-500 @enderror" />
@@ -46,10 +46,10 @@
             <!-- Lokasi -->
             <div>
                 <label for="lokasi" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    Lokasi
+                    {{__('messages.Lokasi')}}
                 </label>
                 <input type="text" id="lokasi" name="lokasi" value="{{ old('lokasi') }}"
-                    placeholder="Contoh: Gedung Serbaguna / Zoom Meeting"
+                    placeholder="{{__('messages.tp4')}}"
                     class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden @error('lokasi') border-red-500 @enderror" />
                 @error('lokasi')
                     <span class="text-xs text-red-500 mt-1 block">{{ $message }}</span>
@@ -59,7 +59,7 @@
             <!-- Kuota Peserta -->
             <div>
                 <label for="kuota" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    Kuota Peserta
+                    {{__('messages.Kuota Peserta')}}
                 </label>
                 <input type="number" id="kuota" name="kuota" value="{{ old('kuota') }}" min="1"
                     placeholder="0"
@@ -71,7 +71,7 @@
 
             <div x-data="{ preview: null }">
                 <label for="gambar" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    Upload Gambar Event
+                    {{__('messages.Upload Gambar Event')}}
                 </label>
 
                 <input type="file" name="gambar" id="gambar" accept="image/*"
@@ -86,7 +86,7 @@
 
                         <template x-if="!preview">
                             <div class="flex h-full items-center justify-center bg-gray-50 text-sm text-gray-500">
-                                Belum ada gambar dipilih
+                                {{__('messages.Belum ada gambar dipilih')}}
                             </div>
                         </template>
                     </div>
@@ -98,7 +98,7 @@
             <div class="flex justify-end pt-2">
                 <button type="submit"
                     class="px-5 py-2.5 text-sm font-medium text-white bg-brand-500 hover:bg-brand-600 rounded-lg shadow-xs focus:ring-4 focus:ring-brand-500/20 transition-all cursor-pointer">
-                    Simpan Event
+                    {{__('messages.Simpan Event')}}
                 </button>
             </div>
         </form>
