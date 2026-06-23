@@ -21,8 +21,7 @@ return [
     "Explore" => "Jelajah",
     "Kontak" => "Kontak",
 
-    "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
-
+    
     "Kebijakan Privasi" => "Kebijakan Privasi",
     "Syarat & Ketentuan" => "Syarat & Ketentuan",
     "Semua hak dilindungi." => "Semua hak dilindungi.",
@@ -32,14 +31,13 @@ return [
     "Profil" => "Profil",
     "Temukan dan Kelola" => "Temukan dan Kelola",
     "Kegiatan Kampus dengan Mudah" => "Kegiatan Kampus dengan Mudah",
-
+    
     "hero_description" => "Event Kampus adalah platform yang memudahkan mahasiswa, organisasi, dan pihak kampus dalam menemukan, mengelola, serta mengikuti berbagai kegiatan.",
-
+    
     "Lihat Event" => "Lihat Event",
     "Event Terdekat" => "Event Terdekat",
-    "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat." => "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat.",
     "Lihat Semua" => "Lihat Semua",
-
+    
     "Coming Soon" => "Segera Hadir",
     "Deskripsi" => "Deskripsi",
     "Tanggal" => "Tanggal",
@@ -91,5 +89,45 @@ return [
     "Perbarui nama dan alamat email akun Anda." => "Perbarui nama dan alamat email akun Anda.",
     "Simpan Perubahan" => "Simpan Perubahan",
     'Keluar' => 'Keluar',
-    'Edit Profil' => 'Edit Profil'
-];
+    'Edit Profil' => 'Edit Profil',
+    "Status Registrasi" => "Status Registrasi",
+    "Distribusi status pendaftar seluruh event" => "Distribusi status pendaftar seluruh event",
+    "Total Event" => "Total Event",
+    "Total Pendaftar" => "Total Pendaftar",
+    "Menunggu Approval" => "Menunggu Approval",
+    "Pendaftar Diterima" => "Pendaftar Diterima",
+    "Pendaftar per Event" => "Pendaftar per Event",
+    "Daftar Event" => "Daftar Event",
+    "list event desc" => "Kelola, cari, dan urutkan seluruh agenda kegiatan panitia dengan mudah",
+    "Tambah Form" => "Tambah Form",
+    "Cari nama atau lokasi" => "Cari nama atau lokasi...",
+    "Kuota" => "Kuota",
+    "orang" => "orang",
+    "Daftar Peserta" => "Daftar Peserta",
+    "Aksi" => "Aksi",
+    "Tanggal Daftar" => "Tanggal Daftar",
+    "Terima" => "Terima",
+    "Tolak" => "Tolak",
+    "Diterima" => "Diterima",
+    "Ditolak" => "Ditolak",
+    "Cari peserta" => "Cari peserta...",
+    "Semua Event" => "Semua Event",
+    "Semua Status" => "Semua Status",
+    "Pending" => "Sedang diproses",
+    "Konfirmasi Peserta" => "Konfirmasi Peserta",
+    "Pengaturan Akun" => "Pengaturan Akun",
+    "Konfirmasi Status" => "Konfirmasi Status",
+    "Yakin ingin mengubah status" => "Yakin ingin mengubah status?",
+    "Batal" => "Batal",
+    "menjadi" => "menjadi",
+    "Pendaftar" => "Pendaftar",
+    "pendaftar" => "pendaftar",
+    "Lihat Detail" => "Lihat detail",
+    "Hapus" => "Hapus",
+
+    //teks panjang
+    "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
+    "tp2" => "Temukan konser, festival, dan pertunjukan musik terbaik yang akan berlangsung dalam waktu dekat.",
+    "tp3" => "Kelola peserta yang mendaftar ke event Anda"
+    ];
+    

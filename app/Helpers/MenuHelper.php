@@ -13,18 +13,18 @@ class MenuHelper
                 'path' => route('dashboard')
             ],
             [
-                'name' => 'Event Saya',
+                'name' => __('messages.Event Saya'),
                 'icon' => 'tables',
                 'path' => route('panitia.events.index'),
             ],
             [
                 'icon' => 'user-profile',
-                'name' => 'Konfirmasi Peserta',
+                'name' => __('messages.Konfirmasi Peserta'),
                 'path' => route('panitia.registrations.index'),
             ],
             [
                 'icon' => 'user-profile',
-                'name' => 'Pengaturan Akun',
+                'name' => __('messages.Pengaturan Akun'),
                 'path' => route('profile.edit'),
             ],
             // [
