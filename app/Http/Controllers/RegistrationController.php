@@ -137,7 +137,8 @@ class RegistrationController extends Controller
         }
         abort_if($registration->status !== 'diterima', 404, 'Tiket belum tersedia.');
         $registration->load(['event', 'user']);
-        return view('pages.mahasiswa.ticket', compact('registration'));
+        $title = __('Tiket Event');
+        return view('pages.mahasiswa.ticket', compact('registration', 'title'));
     }
 
 
