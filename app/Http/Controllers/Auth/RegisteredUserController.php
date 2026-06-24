@@ -21,7 +21,8 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        $title = __('messages.Register');
+        return view('auth.register', compact('title'));
     }
 
     /**

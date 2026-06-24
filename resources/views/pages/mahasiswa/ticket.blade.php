@@ -56,7 +56,7 @@
                     </div>
 
                     <p class="mt-4 text-center text-sm text-gray-500">
-                        Tunjukkan QR Code saat check-in event
+                        {{ __('messages.Tunjukkan QR Code saat check-in event') }}
                     </p>
 
                 </div>
@@ -66,7 +66,7 @@
 
                     <div>
                         <p class="text-xs uppercase text-gray-500">
-                            Nama Peserta
+                            {{ __('messages.Nama Peserta') }}
                         </p>
                         <p class="mt-1 font-semibold text-gray-900">
                             {{ $registration->user->name }}
@@ -75,7 +75,7 @@
 
                     <div>
                         <p class="text-xs uppercase text-gray-500">
-                            EMAIL
+                            {{ __('messages.Email') }}
                         </p>
                         <p class="mt-1 font-semibold text-gray-900">
                             {{ $registration->user->email }}
@@ -84,7 +84,7 @@
 
                     <div>
                         <p class="text-xs uppercase text-gray-500">
-                            Lokasi
+                            {{ __('messages.Lokasi') }}
                         </p>
                         <p class="mt-1 font-semibold text-gray-900">
                             {{ $registration->event->lokasi }}
@@ -93,7 +93,7 @@
 
                     <div>
                         <p class="text-xs uppercase text-gray-500">
-                            Kode Tiket
+                            {{ __('messages.Kode Tiket') }}
                         </p>
                         <p class="mt-1 font-semibold text-brand-600">
                             #{{ $registration->ticket_code }}
@@ -106,7 +106,7 @@
                 <div class="border-t border-gray-100 bg-gray-50 px-6 py-4">
 
                     <p class="text-center text-xs text-gray-500">
-                        Harap membawa identitas yang valid saat registrasi.
+                        {{ __('messages.Harap membawa identitas yang valid saat registrasi.') }}
                     </p>
 
                 </div>
@@ -118,15 +118,15 @@
             <div class="mt-6 grid grid-cols-2 gap-3">
 
                 <a href="{{ route('mahasiswa.ticket.download', $registration) }}"
-                    @click="$store.notification.fire('success', 'Tiket sedang diunduh!')"
+                    @click="$store.notification.fire('success', '{{ __('messages.Tiket sedang diunduh!') }}')"
                     class="flex items-center justify-center rounded-xl border border-gray-200 bg-white px-4 py-3 text-sm font-medium text-gray-700 shadow-theme-xs hover:bg-gray-50">
-                    Unduh Tiket
+                    {{ __('messages.Unduh Tiket') }}
                 </a>
 
                 <a href="{{ route('welcome') }}"
                     class="flex items-center justify-center rounded-xl border  bg-brand-600 px-4 py-3 text-sm font-medium text-white shadow-theme-xs hover:bg-brand-700">
 
-                    Kembali ke Beranda
+                    {{ __('messages.Kembali ke Beranda') }}
 
                 </a>
 

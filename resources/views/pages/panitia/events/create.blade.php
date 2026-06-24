@@ -9,7 +9,7 @@
             <!-- Nama Event -->
             <div>
                 <label for="nama" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    {{ __('messages.Nama Event') }}
+                    {{ __('messages.Nama Event') }} <span class="text-error-500">*</span>
                 </label>
                 <input type="text" id="nama" name="nama" value="{{ old('nama') }}"
                     placeholder="{{ __('messages.Masukkan nama event') }}"
@@ -22,7 +22,7 @@
             <!-- Deskripsi Event -->
             <div>
                 <label for="deskripsi" class="mb-1.5 block text-sm font-medium text-gray-700">
-                    {{ __('messages.Deskripsi') }}
+                    {{ __('messages.Deskripsi') }} <span class="text-error-500">*</span>
                 </label>
                 <textarea id="deskripsi" name="deskripsi" rows="4"
                     placeholder="{{ __('messages.Jelaskan detail mengenai event ini...') }}"
@@ -35,7 +35,7 @@
                 <!-- Tanggal dan Waktu Event -->
                 <div>
                     <label for="tanggal" class="mb-1.5 block text-sm font-medium text-gray-700">
-                        {{ __('messages.Tanggal & Waktu Pelaksanaan') }}
+                        {{ __('messages.Tanggal & Waktu Pelaksanaan') }} <span class="text-error-500">*</span>
                     </label>
                     <input type="datetime-local" id="tanggal" name="tanggal" value="{{ old('tanggal') }}"
                         class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 focus:ring-3 focus:outline-hidden @error('tanggal') border-red-500 @enderror" />
@@ -47,7 +47,7 @@
                 <!-- Lokasi -->
                 <div>
                     <label for="lokasi" class="mb-1.5 block text-sm font-medium text-gray-700">
-                        {{ __('messages.Lokasi') }}
+                        {{ __('messages.Lokasi') }} <span class="text-error-500">*</span>
                     </label>
                     <input type="text" id="lokasi" name="lokasi" value="{{ old('lokasi') }}"
                         placeholder="{{ __('messages.tp4') }}"
@@ -60,7 +60,7 @@
                 <!-- Kuota Peserta -->
                 <div>
                     <label for="kuota" class="mb-1.5 block text-sm font-medium text-gray-700">
-                        {{ __('messages.Kuota Peserta') }}
+                        {{ __('messages.Kuota Peserta') }} <span class="text-error-500">*</span>
                     </label>
                     <input type="number" id="kuota" name="kuota" value="{{ old('kuota') }}" min="1"
                         placeholder="0"

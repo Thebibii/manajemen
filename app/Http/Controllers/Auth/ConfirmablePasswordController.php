@@ -17,6 +17,7 @@ class ConfirmablePasswordController extends Controller
      */
     public function show(): View
     {
+        // $title = __('messages.Detail Event');
         return view('auth.confirm-password');
     }
 

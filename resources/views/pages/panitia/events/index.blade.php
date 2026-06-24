@@ -9,7 +9,7 @@
             desc="{{ __('messages.list event desc') }}">
             <x-slot:action>
                 <a href="{{ route('panitia.events.create') }}" class="w-full sm:fit">
-                    <x-ui.button variant="primary" class="w-full sm:fit">{{ __('messages.Tambah Form') }}</x-ui.button>
+                    <x-ui.button variant="primary" class="w-full sm:fit">{{ __('messages.Tambah Event') }}</x-ui.button>
                 </a>
             </x-slot:action>
 

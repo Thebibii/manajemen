@@ -1,29 +1,3 @@
-{{-- <x-guest-layout>
-    <div class="mb-4 text-sm text-gray-600">
-        {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-    </div>
-
-    <!-- Session Status -->
-    <x-auth-session-status class="mb-4" :status="session('status')" />
-
-    <form method="POST" action="{{ route('password.email') }}">
-        @csrf
-
-        <!-- Email Address -->
-        <div>
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required
-                autofocus />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <x-primary-button>
-                {{ __('Email Password Reset Link') }}
-            </x-primary-button>
-        </div>
-    </form>
-</x-guest-layout> --}}
 @extends('layouts.fullscreen-layout')
 
 @section('content')
@@ -47,10 +21,10 @@
                 <div class="mx-auto flex w-full max-w-md flex-1 flex-col justify-center">
                     <div class="mb-5 sm:mb-8">
                         <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800">
-                            {{__('messages.Forgot Your Password?')}}
+                            {{ __('messages.Forgot Your Password?') }}
                         </h1>
                         <p class="text-sm text-gray-500 ">
-                            {{__('messages.tp8')}}
+                            {{ __('messages.tp8') }}
                         </p>
                     </div>
 
@@ -73,8 +47,8 @@
                                     </label>
 
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                        placeholder="{{__('messages.Enter your email')}}" required autofocus
-                                        class=" font-normal shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden">
+                                        placeholder="{{ __('messages.Enter your email') }}" autofocus
+                                        class=" font-normal shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden @error('email') border-red-400 focus:border-red-400 focus:ring-red-500/10 @enderror"">
 
                                     @error('email')
                                         <p class="mt-2 text-sm text-error-500">
@@ -87,7 +61,7 @@
                                 <div>
                                     <button type="submit"
                                         class="bg-brand-500 shadow-theme-xs hover:bg-brand-600 flex w-full items-center justify-center rounded-lg px-4 py-3 text-sm font-medium text-white transition">
-                                        {{__('messages.Send Reset Link')}}
+                                        {{ __('messages.Send Reset Link') }}
                                     </button>
                                 </div>
                             </div>
@@ -95,9 +69,9 @@
 
                         <div class="mt-5">
                             <p class="text-center text-sm font-normal text-gray-700 sm:text-start ">
-                                {{__('messages.Wait, I remember my password...')}}
+                                {{ __('messages.Wait, I remember my password...') }}
                                 <a href="{{ route('login') }}" class="text-brand-500 hover:text-brand-600">
-                                    {{__('messages.Login')}}
+                                    {{ __('messages.Login') }}
                                 </a>
                             </p>
                         </div>
@@ -112,13 +86,12 @@
                     <x-common.common-grid-shape />
 
                     <div class="flex max-w-xs flex-col items-center">
-                        <a href="{{ url('/') }}" class="mb-4 block">
-                            <img src="./images/logo/auth-logo.svg" alt="Logo" />
+                        <a href="{{ route('welcome') }}" class="mb-4 block text-title-md text-white">
+                            Event Kampus
                         </a>
 
                         <p class="text-center text-gray-400">
-                            Verifikasi email diperlukan untuk memastikan keamanan akun
-                            dan mengaktifkan seluruh fitur sistem.
+                            {{ __('messages.Temukan dan Kelola') }} {{ __('messages.Kegiatan Kampus dengan Mudah') }}
                         </p>
                     </div>
                 </div>

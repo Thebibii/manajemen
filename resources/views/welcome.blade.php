@@ -40,7 +40,7 @@
 
                 </div>
 
-                <!-- Featured Event Card -->
+                <!-- Right Card -->
                 <div class="relative">
 
                     <div
@@ -50,55 +50,25 @@
 
                             <div class="aspect-video overflow-hidden rounded-xl bg-gray-100">
 
-                                <img src="https://picsum.photos/seed/1-festival-alternative/1600/900"
-                                    alt="NOISE FESTIVAL 2024"
+                                <img src="{{ asset('images/hero.jpg') }}" alt="Campus Activities"
                                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                                     loading="lazy">
 
                             </div>
 
-                            <span
-                                class="absolute top-4 right-4 inline-flex items-center px-3 py-1 rounded-full bg-success-50 text-success-700 text-theme-xs font-medium border border-success-100">
-                                Coming Soon
-                            </span>
+
 
                         </div>
 
                         <div>
 
-                            <span
-                                class="inline-flex px-3 py-1 rounded-full bg-brand-50 text-brand-700 text-theme-xs font-medium mb-4">
-                                Alternative
-                            </span>
-
                             <h2 class="text-2xl font-semibold text-gray-900 mb-2">
-                                NOISE FESTIVAL 2024
+                                {{ __('messages.Temukan Berbagai Kegiatan Kampus') }}
                             </h2>
 
                             <p class="text-gray-500 mb-6">
-                                Deskripsi
+                                {{ __('messages.Dari seminar, workshop, kompetisi, hingga kegiatan organisasi, semuanya dapat ditemukan dan dikelola dalam satu platform.') }}
                             </p>
-
-                            <div class="flex items-center justify-between border-t border-gray-200 pt-5">
-
-                                <div>
-                                    <p class="text-theme-xs text-gray-400 uppercase tracking-wide">
-                                        Tanggal
-                                    </p>
-
-                                    <p class="font-semibold text-gray-800 mt-1">
-                                        15 Maret 2024
-                                    </p>
-                                </div>
-
-                                <a href="/event/1"
-                                    class="inline-flex items-center px-5 py-2.5 rounded-lg bg-brand-50 text-brand-600 hover:bg-brand-100 transition-all duration-300 font-medium">
-
-                                    Beli Tiket
-
-                                </a>
-
-                            </div>
 
                         </div>
 
@@ -187,12 +157,12 @@
                                     @if ($event->sisa_kuota <= 0)
                                         <span
                                             class="absolute top-3 right-3 bg-gray-900/80 text-white text-xs font-medium px-2.5 py-1 rounded-full">
-                                            Kuota Penuh
+                                            {{ __('messages.Kuota Penuh') }}
                                         </span>
                                     @elseif ($event->sisa_kuota <= 5)
                                         <span
                                             class="absolute top-3 right-3 bg-red-500/90 text-white text-xs font-medium px-2.5 py-1 rounded-full">
-                                            Sisa {{ $event->sisa_kuota }} slot
+                                            {{ __('messages.Sisa :slot slot', ['slot' => $event->sisa_kuota]) }}
                                         </span>
                                     @endif
                                 </div>
@@ -248,8 +218,8 @@
                                         <div class="flex items-center gap-2 text-sm text-gray-600">
 
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
                                                 class="lucide lucide-map-pin-icon lucide-map-pin w-4 h-4 text-brand-500">
                                                 <path
                                                     d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" />
@@ -275,7 +245,10 @@
                                             </svg>
 
                                             <span>
-                                                {{ $event->sisa_kuota }} / {{ $event->kuota }} slot tersisa
+                                                {{ __('messages.:remaining / :total slot tersisa', [
+                                                    'remaining' => $event->sisa_kuota,
+                                                    'total' => $event->kuota,
+                                                ]) }}
                                             </span>
 
                                         </div>
@@ -292,7 +265,7 @@
                     <!-- End Card -->
                 @empty
                     <div class="w-full text-center py-10 text-gray-500">
-                        Belum ada event yang tersedia saat ini.
+                        {{ __('messages.Belum ada event yang tersedia saat ini.') }}
                     </div>
                 @endforelse
 

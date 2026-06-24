@@ -17,10 +17,10 @@
                                 class="w-full sm:w-[180px] shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-[42px] appearance-none rounded-lg border border-gray-300 bg-transparent bg-none px-4 py-2.5 pr-10 text-sm placeholder:text-gray-400 focus:ring-3 focus:outline-hidden"
                                 :class="isOptionSelected ? 'text-gray-800' : 'text-gray-400'">
 
-                                <option value="" class="text-gray-400">Semua Status</option>
-                                <option value="pending" class="text-gray-700">Pending</option>
-                                <option value="diterima" class="text-gray-700">Diterima</option>
-                                <option value="ditolak" class="text-gray-700">Ditolak</option>
+                                <option value="" class="text-gray-400">{{ __('messages.Semua Status') }}</option>
+                                <option value="pending" class="text-gray-700">{{ __('messages.Pending') }}</option>
+                                <option value="diterima" class="text-gray-700">{{ __('messages.Diterima') }}</option>
+                                <option value="ditolak" class="text-gray-700">{{ __('messages.Ditolak') }}</option>
                             </select>
 
                             <span class="pointer-events-none absolute top-1/2 right-4 z-30 -translate-y-1/2 text-gray-700">
@@ -160,7 +160,7 @@
                     </div>
                 @empty
                     <div class="w-full py-2 text-gray-500">
-                        Belum ada event yang tersedia saat ini.
+                        {{ __('messages.Belum ada event yang tersedia saat ini.') }}
                     </div>
                 @endforelse
 

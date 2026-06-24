@@ -210,7 +210,7 @@
                         </div>
 
                         <div class="qr-caption">
-                            Tunjukkan QR Code saat check-in event
+                            {{ __('messages.Tunjukkan QR Code saat check-in event') }}
                         </div>
 
                     </div>
@@ -224,7 +224,7 @@
 
                                     <td>
                                         <div class="detail-label">
-                                            Nama Peserta
+                                            {{ __('messages.Nama Peserta') }}
                                         </div>
 
                                         <div class="detail-value">
@@ -234,7 +234,7 @@
 
                                     <td>
                                         <div class="detail-label">
-                                            Email
+                                            {{ __('messages.Email') }}
                                         </div>
 
                                         <div class="detail-value">
@@ -254,7 +254,7 @@
 
                                     <td>
                                         <div class="detail-label">
-                                            Lokasi
+                                            {{ __('messages.Lokasi') }}
                                         </div>
 
                                         <div class="detail-value">
@@ -264,7 +264,7 @@
 
                                     <td>
                                         <div class="detail-label">
-                                            Kode Tiket
+                                            {{ __('messages.Kode Tiket') }}
                                         </div>
 
                                         <div class="detail-value brand">
@@ -280,8 +280,8 @@
                     </div>
 
                     <div class="footer">
-                        Harap membawa identitas yang valid saat registrasi dan menunjukkan tiket ini kepada panitia saat
-                        check-in.
+                        {{ __('messages.Harap membawa identitas yang valid saat registrasi dan menunjukkan tiket ini kepada panitia saat check-in.') }}
+
                     </div>
 
                 </div>

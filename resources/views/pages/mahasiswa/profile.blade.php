@@ -40,7 +40,7 @@
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 3000)"
                             class="text-sm text-green-600">
-                            {{ __('Profil berhasil diperbarui.') }}
+                            {{ __('messages.Profil berhasil diperbarui.') }}
                         </p>
                     @endif
                 </div>
@@ -90,12 +90,12 @@
 
                 {{-- Submit --}}
                 <div class="flex items-center gap-4 pt-1">
-                    <x-ui.button>{{ __('messages.Perbarui Password') }}</x-ui.button>
+                    <x-ui.button type="submit">{{ __('messages.Perbarui Password') }}</x-ui.button>
 
                     @if (session('status') === 'password-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 3000)"
                             class="text-sm text-green-600">
-                            {{ __('Password berhasil diperbarui.') }}
+                            {{ __('messages.Password berhasil diperbarui.') }}
                         </p>
                     @endif
                 </div>

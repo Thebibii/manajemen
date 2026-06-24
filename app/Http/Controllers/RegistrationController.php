@@ -20,11 +20,11 @@ class RegistrationController extends Controller
                 $event = Event::lockForUpdate()->findOrFail($event->id);
 
                 if ($event->registrations()->where('user_id', auth()->id())->exists()) {
-                    throw new \Exception('Anda sudah mendaftar pada event ini.');
+                    throw new \Exception(__('messages.Anda sudah mendaftar pada event ini.'));
                 }
 
                 if ($event->jumlahDiterima() >= $event->kuota) {
-                    throw new \Exception('Kuota event sudah penuh.');
+                    throw new \Exception(__('messages.Kuota event sudah penuh.'));
                 }
 
                 Registration::create([
@@ -34,7 +34,7 @@ class RegistrationController extends Controller
                 ]);
             });
 
-            return back()->with('success', __('messages.Pendaftaran berhasil, menunggu konfirmasi panitia.'));
+            return back()->with('success', __('messages.Pendaftaran berhasil, menunggu konfirmasi panitia.')); // done
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -77,8 +77,8 @@ class RegistrationController extends Controller
             'diterima' => $statsRaw->get('diterima', 0),
             'ditolak'  => $statsRaw->get('ditolak', 0),
         ];
-
-        return view('pages.panitia.registrations.index', compact('registrations', 'events', 'stats'));
+        $title = __('messages.Konfirmasi Peserta');
+        return view('pages.panitia.registrations.index', compact('registrations', 'events', 'stats', 'title'));
     }
 
     public function indexForEvent(Event $event)
@@ -91,8 +91,12 @@ class RegistrationController extends Controller
     {
         $registration->load('event');
 
-        abort_if($registration->event->user_id !== auth()->id(), 403);
-
+        if ($registration->event->user_id !== auth()->id()) {
+            return redirect()->back()->with(
+                'warning',
+                __('messages.Anda tidak memiliki akses ke halaman ini.')
+            );
+        }
         $request->validate(['status' => 'required|in:diterima,ditolak,pending']);
 
         try {
@@ -101,7 +105,9 @@ class RegistrationController extends Controller
                     $event = Event::lockForUpdate()->findOrFail($registration->event_id);
 
                     if ($event->jumlahDiterima() >= $event->kuota) {
-                        throw new \Exception('Kuota event sudah penuh, tidak bisa menerima peserta lagi.');
+                        throw new \Exception(
+                            __('messages.Kuota event sudah penuh, tidak bisa menerima peserta lagi.')
+                        );
                     }
                 }
 
@@ -114,7 +120,7 @@ class RegistrationController extends Controller
                 $registration->save();
             });
 
-            return back()->with('success', __('messages.Status pendaftaran diperbarui.'));
+            return back()->with('success', __('messages.Status pendaftaran diperbarui.')); // done
         } catch (\Exception $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -122,7 +128,13 @@ class RegistrationController extends Controller
 
     public function ticket(Registration $registration)
     {
-        abort_if($registration->user_id !== auth()->id(), 403);
+        // abort_if($registration->user_id !== auth()->id(), 403);
+        if ($registration->user_id !== auth()->id()) {
+            return redirect()->back()->with(
+                'warning',
+                __('messages.Anda tidak memiliki akses ke halaman ini.')
+            );
+        }
         abort_if($registration->status !== 'diterima', 404, 'Tiket belum tersedia.');
         $registration->load(['event', 'user']);
         return view('pages.mahasiswa.ticket', compact('registration'));
@@ -131,7 +143,13 @@ class RegistrationController extends Controller
 
     public function downloadTicket(Registration $registration)
     {
-        abort_if($registration->user_id !== auth()->id(), 403);
+        // abort_if($registration->user_id !== auth()->id(), 403);
+        if ($registration->user_id !== auth()->id()) {
+            return redirect()->back()->with(
+                'warning',
+                __('messages.Anda tidak memiliki akses ke halaman ini.')
+            );
+        }
         abort_if($registration->status !== 'diterima', 404, 'Tiket belum tersedia.');
 
         $registration->load(['event', 'user']);

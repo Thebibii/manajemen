@@ -15,8 +15,9 @@ class EmailVerificationPromptController extends Controller
      */
     public function __invoke(Request $request): RedirectResponse|View
     {
+        $title = __('messages.Verifikasi Email');
         return $request->user()->hasVerifiedEmail()
             ? redirect()->intended(RedirectHelper::afterLogin())
-            : view('auth.verify-email');
+            : view('auth.verify-email', compact('title'));
     }
 }

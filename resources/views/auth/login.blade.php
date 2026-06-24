@@ -40,22 +40,23 @@
                                     <!-- Email -->
                                     <div>
                                         <label for="email" class="mb-1.5 block text-sm font-medium text-gray-700">
-                                            Email<span class="text-error-500">*</span>
+                                            Email <span class="text-error-500">*</span>
                                         </label>
                                         <input type="email" id="email" name="email" value="{{ old('email') }}"
                                             autofocus autocomplete="username" placeholder="info@gmail.com"
-                                            class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
+                                            class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden @error('email') border-red-400 focus:border-red-400 focus:ring-red-500/10 @enderror"" />
                                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                     </div>
                                     <!-- Password -->
                                     <div>
                                         <label for="password" class="mb-1.5 block text-sm font-medium text-gray-700">
-                                            {{ __('messages.Password') }}<span class="text-error-500">*</span>
+                                            {{ __('messages.Password') }} <span class="text-error-500">*</span>
                                         </label>
                                         <div x-data="{ showPassword: false }" class="relative">
                                             <input :type="showPassword ? 'text' : 'password'" id="password" name="password"
-                                                autocomplete="current-password" placeholder="{{__('messages.Enter your password')}}"
-                                                class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
+                                                autocomplete="current-password"
+                                                placeholder="{{ __('messages.Enter your password') }}"
+                                                class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden @error('password') border-red-400 focus:border-red-400 focus:ring-red-500/10 @enderror"" />
                                             <span @click="showPassword = !showPassword"
                                                 class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer text-gray-500">
                                                 <svg x-show="!showPassword" class="fill-current" width="20"

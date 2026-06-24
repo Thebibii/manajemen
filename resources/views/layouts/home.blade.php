@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ $title ?? 'Dashboard' }} | TailAdmin - Laravel Tailwind CSS Admin Dashboard Template</title>
+    <title>{{ $title ?? 'Dashboard' }} | Event Kampus</title>
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -39,7 +39,7 @@
 
 </head>
 
-<body x-data>
+<body x-data class="min-h-screen flex flex-col">
 
     {{-- preloader --}}
     {{-- <x-common.preloader /> --}}
@@ -49,7 +49,9 @@
     @include('layouts.home.navigation')
     {{-- @include('layouts.sidebar') --}}
 
-    @yield('content')
+    <main class="flex-1">
+        @yield('content')
+    </main>
 
     <footer class="bg-brand-700 text-white py-12">
         <div class="container mx-auto px-6">

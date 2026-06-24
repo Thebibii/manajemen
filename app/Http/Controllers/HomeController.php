@@ -14,9 +14,9 @@ class HomeController extends Controller
             ->orderBy('tanggal', 'asc')
             ->take(8)
             ->get();
-
+        $title = __('messages.Beranda');
         // Mengembalikan view (sesuaikan nama file blade Anda, contoh: 'events.index')
-        return view('welcome', compact('events'));
+        return view('welcome', compact('events', 'title'));
     }
 
     public function show(Event $event)
@@ -25,8 +25,9 @@ class HomeController extends Controller
         $event->loadCount('registrations');
         // Menambahkan properti sisa_kuota untuk halaman detail jika diperlukan
         $sudahDaftar = $event->registrations()->where('user_id', auth()->id())->first();
+        $title = __('messages.Detail Event');
         // Mengembalikan view detail (contoh: 'events.show')
-        return view('pages.event', compact('event', 'sudahDaftar'));
+        return view('pages.event', compact('event', 'sudahDaftar', 'title'));
     }
 
     public function explore(Request $request)
@@ -68,7 +69,7 @@ class HomeController extends Controller
         };
 
         $events = $query->paginate(16)->withQueryString();
-
-        return view('pages.explore', compact('events'));
+        $title = __('messages.Explore');
+        return view('pages.explore', compact('events', 'title'));
     }
 }

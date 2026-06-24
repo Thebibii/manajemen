@@ -109,12 +109,12 @@
                                     @if ($event->sisa_kuota <= 0)
                                         <span
                                             class="absolute top-3 right-3 bg-gray-900/80 text-white text-xs font-medium px-2.5 py-1 rounded-full">
-                                            Kuota Penuh
+                                            {{ __('messages.Kuota Penuh') }}
                                         </span>
                                     @elseif ($event->sisa_kuota <= 5)
                                         <span
                                             class="absolute top-3 right-3 bg-red-500/90 text-white text-xs font-medium px-2.5 py-1 rounded-full">
-                                            Sisa {{ $event->sisa_kuota }} slot
+                                            {{ __('messages.Sisa :slot slot', ['slot' => $event->sisa_kuota]) }}
                                         </span>
                                     @endif
                                 </div>
@@ -189,7 +189,10 @@
                                             </svg>
 
                                             <span>
-                                                {{ $event->sisa_kuota }} / {{ $event->kuota }} slot tersisa
+                                                {{ __('messages.:remaining / :total slot tersisa', [
+                                                    'remaining' => $event->sisa_kuota,
+                                                    'total' => $event->kuota,
+                                                ]) }}
                                             </span>
 
                                         </div>
@@ -206,7 +209,7 @@
                     <!-- End Card -->
                 @empty
                     <div class="w-full text-center py-10 text-gray-500">
-                        Belum ada event yang tersedia saat ini.
+                        {{ __('messages.Belum ada event yang tersedia saat ini.') }}
                     </div>
                 @endforelse
 

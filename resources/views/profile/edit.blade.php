@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <x-common.page-breadcrumb pageTitle="User Profile" />
+    <x-common.page-breadcrumb pageTitle="{{ __('messages.Pengaturan Akun') }}" />
     <div class="space-y-6">
         <!-- Profile Information -->
-        <x-common.component-card title="Profile Information"
-            desc="Update your account's profile information and email address.">
+        <x-common.component-card title="{{ __('messages.Informasi Profil') }}"
+            desc="{{ __('messages.Perbarui nama dan alamat email akun Anda.') }}">
 
             <form id="send-verification" method="POST" action="{{ route('verification.send') }}">
                 @csrf
@@ -18,7 +18,7 @@
                 <!-- Name -->
                 <div>
                     <label for="name" class="mb-1.5 block text-sm font-medium text-gray-700">
-                        Name<span class="text-error-500">*</span>
+                        {{ __('messages.Nama Lengkap') }} <span class="text-error-500">*</span>
                     </label>
                     <input type="text" id="name" name="name" value="{{ old('name', $user->name) }}" required
                         autofocus autocomplete="name"
@@ -29,10 +29,10 @@
                 <!-- Email -->
                 <div>
                     <label for="email" class="mb-1.5 block text-sm font-medium text-gray-700">
-                        Email<span class="text-error-500">*</span>
+                        {{ __('messages.Alamat Email') }} <span class="text-error-500">*</span>
                     </label>
-                    <input type="email" id="email" name="email" value="{{ old('email', $user->email) }}" required
-                        autocomplete="username"
+                    <input type="email" id="email" readonly name="email" value="{{ old('email', $user->email) }}"
+                        required autocomplete="username"
                         class="dark:bg-dark-900 shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
 
@@ -55,9 +55,7 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <x-ui.button type="submit">
-                        {{ __('Save') }}
-                    </x-ui.button>
+                    <x-ui.button type="submit">{{ __('messages.Simpan Perubahan') }}</x-ui.button>
                     {{-- <button type="submit"
                         class="bg-brand-500 shadow-theme-xs hover:bg-brand-600 rounded-lg px-4 py-2.5 text-sm font-medium text-white transition">
                         {{ __('Save') }}
@@ -65,8 +63,8 @@
 
                     @if (session('status') === 'profile-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                            class="text-sm text-gray-600">
-                            {{ __('Saved.') }}
+                            class="text-sm text-green-600">
+                            {{ __('messages.Profil berhasil diperbarui.') }}
                         </p>
                     @endif
                 </div>
@@ -74,8 +72,7 @@
         </x-common.component-card>
 
         <!-- Update Password -->
-        <x-common.component-card title="Update Password"
-            desc="Ensure your account is using a long, random password to stay secure.">
+        <x-common.component-card title="{{ __('messages.Ubah Password') }}" desc="{{ __('messages.Desc Password') }}">
             <form method="POST" action="{{ route('password.update') }}" class="space-y-5">
                 @csrf
                 @method('PUT')
@@ -83,7 +80,7 @@
                 <!-- Current Password -->
                 <div>
                     <label for="update_password_current_password" class="mb-1.5 block text-sm font-medium text-gray-700">
-                        Current Password
+                        {{ __('messages.Password Saat Ini') }}
                     </label>
                     <div x-data="{ showPassword: false }" class="relative">
                         <input :type="showPassword ? 'text' : 'password'" id="update_password_current_password"
@@ -111,7 +108,7 @@
                 <!-- New Password -->
                 <div>
                     <label for="update_password_password" class="mb-1.5 block text-sm font-medium text-gray-700">
-                        New Password
+                        {{ __('messages.Password Baru') }}
                     </label>
                     <div x-data="{ showPassword: false }" class="relative">
                         <input :type="showPassword ? 'text' : 'password'" id="update_password_password" name="password"
@@ -140,7 +137,7 @@
                 <div>
                     <label for="update_password_password_confirmation"
                         class="mb-1.5 block text-sm font-medium text-gray-700">
-                        Confirm Password
+                        {{ __('messages.Konfirmasi Password Baru') }}
                     </label>
                     <div x-data="{ showPassword: false }" class="relative">
                         <input :type="showPassword ? 'text' : 'password'" id="update_password_password_confirmation"
@@ -166,14 +163,12 @@
                 </div>
 
                 <div class="flex items-center gap-4">
-                    <x-ui.button type="submit">
-                        {{ __('Save') }}
-                    </x-ui.button>
+                    <x-ui.button type="submit">{{ __('messages.Perbarui Password') }}</x-ui.button>
 
                     @if (session('status') === 'password-updated')
                         <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)"
-                            class="text-sm text-gray-600">
-                            {{ __('Saved.') }}
+                            class="text-sm text-green-600">
+                            {{ __('messages.Password berhasil diperbarui.') }}
                         </p>
                     @endif
                 </div>
@@ -192,7 +187,7 @@
                     your account, please download any data or information that you wish to retain.
                 </p>
             </div> --}}
-        <x-common.component-card title="Delete Account"
+        {{-- <x-common.component-card title="Delete Account"
             desc="Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting
                     your account, please download any data or information that you wish to retain.">
             <button x-data="" @click.prevent="$dispatch('open-confirm-user-deletion-modal')" type="button"
@@ -234,7 +229,7 @@
                     </div>
                 </form>
             </div>
-        </x-ui.modal>
+        </x-ui.modal> --}}
     </div>
     </div>
 @endsection

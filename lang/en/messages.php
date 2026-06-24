@@ -90,6 +90,7 @@ return [
     "Simpan Perubahan" => "Save Changes",
     'Keluar' => 'Sign Out',
     'Edit Profil' => 'Edit Profile',
+    'Edit Event' => 'Edit Event',
     "Status Registrasi" => "Registration Status",
     "Distribusi status pendaftar seluruh event" => "Distribution of registrant statuses for all events",
     "Total Event" => "Total Events",
@@ -99,7 +100,7 @@ return [
     "Pendaftar per Event" => "Registrants per Event",
     "Daftar Event" => "List of Events",
     "list event desc" => "Easily manage, search, and sort all of the committee’s event schedules",
-    "Tambah Form" => "Add Event",
+    "Tambah Event" => "Add Event",
     "Cari nama atau lokasi" => "Search for a name or location...",
     "Kuota" => "Quota",
     "orang" => "people",
@@ -148,6 +149,9 @@ return [
     "Sign In" => "Sign In",
     "Enter your email and password to sign in!" => "Enter your email and password to sign in!",
     "Forgot password?" => "Forgot password?",
+    "Forgot password" => "Forgot password",
+    'Anda tidak memiliki akses ke halaman ini.' => 'You do not have permission to access this page.',
+    'Tiket sedang diunduh!' => 'Your ticket is being downloaded!',
     "Remember me" => "Remember me",
     "Sign Up" => "Sign up",
     "Enter your email and password to sign up!" => "Enter your email and password to sign up!",
@@ -169,6 +173,14 @@ return [
     "Enter your password" => "Enter your password",
     "Re-enter your password" => "Re-enter your password",
 
+    'Tunjukkan QR Code saat check-in event' => 'Show this QR Code during event check-in',
+    'Nama Peserta' => 'Participant Name',
+    'Kode Tiket' => 'Ticket Code',
+    'Harap membawa identitas yang valid saat registrasi.' => 'Please bring a valid identification document during registration.',
+    'Unduh Tiket' => 'Download Ticket',
+    'Harap membawa identitas yang valid saat registrasi dan menunjukkan tiket ini kepada panitia saat check-in.' =>
+    'Please bring a valid identification document during registration and present this ticket to the committee during check-in.',
+
     //teks panjang
     "tp2" => "Find the best concerts, festivals, and music shows that will take place soon.",
     "home_tp" => "A ticket platform for art communities, creative communities, and live music lovers in Indonesia.Find the best events, buy tickets easily, and enjoy a hassle-free experience.",
@@ -178,4 +190,28 @@ return [
     "tp6" => "A new verification link has been successfully sent to your email address.",
     "tp7" => "Email verification is required to ensure account security and activate all system features.",
     "tp8" => "Enter the email address linked to your account, and we'll send you a link to reset your password.",
+
+    // success  
+    'Berhasil' => 'Success',
+    'Informasi' => 'Information',
+    'Perhatian' => 'Warning',
+    'Terjadi Kesalahan' => 'An Error Occurred',
+
+    // with
+    'Pendaftaran berhasil, menunggu konfirmasi panitia.' => 'Registration successful. Awaiting organizer confirmation.',
+    'Anda sudah mendaftar pada event ini.' => 'You have already registered for this event.',
+    'Kuota event sudah penuh.' => 'This event is full.',
+    'Kuota event sudah penuh, tidak bisa menerima peserta lagi.' => 'This event is full and can no longer accept participants.',
+    'Status pendaftaran diperbarui.' => 'Registration status updated.',
+    'Profil berhasil diperbarui.' => 'Profile updated successfully.',
+    'Password berhasil diperbarui.' => 'Password updated successfully.',
+    'Event berhasil dibuat.' => 'Event created successfully.',
+    'Event berhasil diperbarui.' => 'Event updated successfully.',
+    'Event berhasil dihapus.' => 'Event deleted successfully.',
+    'Pengaturan Akun' => 'Setting Account',
+    'Verifikasi email diperlukan untuk memastikan keamanan akun dan mengaktifkan seluruh fitur sistem.' => 'Verifikasi email diperlukan untuk memastikan keamanan akun dan mengaktifkan seluruh fitur sistem.',
+    'Temukan Berbagai Kegiatan Kampus' => 'Discover Various Campus Activities',
+
+    'Dari seminar, workshop, kompetisi, hingga kegiatan organisasi, semuanya dapat ditemukan dan dikelola dalam satu platform.' => 'From seminars, workshops, and competitions to student organization activities, everything can be discovered and managed in one platform.',
+
 ];

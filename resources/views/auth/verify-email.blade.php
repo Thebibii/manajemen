@@ -92,9 +92,7 @@
                             Event Kampus
                         </a>
                         <p class="text-center text-gray-400">
-                            <<<<<<< HEAD {{ __('messages.Temukan dan Kelola') }}
-                                {{ __('messages.Kegiatan Kampus dengan Mudah') }}======={{ __('messages.tp7') }}>>>>>>>
-                                rozi
+                            {{ __('messages.Temukan dan Kelola') }} {{ __('messages.Kegiatan Kampus dengan Mudah') }}
                         </p>
                     </div>
                 </div>

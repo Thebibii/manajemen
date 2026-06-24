@@ -100,7 +100,8 @@ return [
     "Pendaftar per Event" => "Pendaftar per Event",
     "Daftar Event" => "Daftar Event",
     "list event desc" => "Kelola, cari, dan urutkan seluruh agenda kegiatan panitia dengan mudah",
-    "Tambah Form" => "Tambah Form",
+    "Tambah Event" => "Tambah Event",
+    'Edit Event' => 'Edit Event',
     "Cari nama atau lokasi" => "Cari nama atau lokasi...",
     "Kuota" => "Kuota",
     "orang" => "orang",
@@ -146,10 +147,14 @@ return [
     "Sign In" => "Masuk",
     "Enter your email and password to sign in!" => "Masukkan email dan kata sandi Anda untuk masuk!",
     "Forgot password?" => "Lupa kata sandi?",
+    "Forgot password" => "Lupa kata sandi",
     "Remember me" => "Ingatkan saya",
     "Sign Up" => "Mendaftar",
     "Enter your email and password to sign up!" => "Masukkan email dan kata sandi Anda untuk masuk!",
     "Verifikasi Email Anda" => "Verifikasi Email Anda",
+    "Verifikasi Email" => "Verifikasi Email ",
+    'Anda tidak memiliki akses ke halaman ini.' => 'Anda tidak memiliki akses ke halaman ini.',
+    'Tiket sedang diunduh!' => 'Tiket sedang diunduh!',
     "Email verifikasi dikirim ke:" => "Email verifikasi dikirim ke:",
     "Kirim Ulang Email Verifikasi" => "Kirim Ulang Email Verifikasi",
     "Tidak menemukan email?" => "Tidak menemukan email?",
@@ -167,6 +172,13 @@ return [
     "Enter your password" => "Masukkan kata sandi anda",
     "Re-enter your password" => "Masukkan ulang kata sandi anda",
 
+    'Tunjukkan QR Code saat check-in event' => 'Tunjukkan QR Code saat check-in event',
+    'Nama Peserta' => 'Nama Peserta',
+    'Kode Tiket' => 'Kode Tiket',
+    'Harap membawa identitas yang valid saat registrasi.' => 'Harap membawa identitas yang valid saat registrasi.',
+    'Unduh Tiket' => 'Unduh Tiket',
+    'Harap membawa identitas yang valid saat registrasi dan menunjukkan tiket ini kepada panitia saat check-in.' =>
+    'Harap membawa identitas yang valid saat registrasi dan menunjukkan tiket ini kepada panitia saat check-in.',
 
     //teks panjang
     "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",
@@ -177,4 +189,29 @@ return [
     "tp6" => "Tautan verifikasi baru telah berhasil dikirim ke alamat email Anda.",
     "tp7" => "Verifikasi email diperlukan untuk memastikan keamanan akun dan mengaktifkan seluruh fitur sistem.",
     "tp8" => "Masukkan alamat email yang terhubung dengan akun Anda, dan kami akan mengirimkan tautan untuk mengatur ulang kata sandi Anda.",
+
+    // success
+    'Berhasil' => 'Berhasil',
+    'Informasi' => 'Informasi',
+    'Perhatian' => 'Perhatian',
+    'Terjadi Kesalahan' => 'Terjadi Kesalahan',
+
+    // with
+    "Status pendaftaran diperbarui." => "Status pendaftaran diperbarui.",
+    'Pendaftaran berhasil, menunggu konfirmasi panitia.' => 'Pendaftaran berhasil, menunggu konfirmasi panitia.',
+    'Anda sudah mendaftar pada event ini.' => 'Anda sudah mendaftar pada event ini.',
+    'Kuota event sudah penuh.' => 'Kuota event sudah penuh.',
+    'Kuota event sudah penuh, tidak bisa menerima peserta lagi.' => 'Kuota event sudah penuh, tidak bisa menerima peserta lagi.',
+    'Profil berhasil diperbarui.' => 'Profil berhasil diperbarui.',
+    'Password berhasil diperbarui.' => 'Password berhasil diperbarui.',
+    'Event berhasil dibuat.' => 'Event berhasil dibuat.',
+    'Event berhasil diperbarui.' => 'Event berhasil diperbarui.',
+    'Event berhasil dihapus.' => 'Event berhasil dihapus.',
+    'Pengaturan Akun' => 'Pengaturan Akun',
+    'Verifikasi email diperlukan untuk memastikan keamanan akun dan mengaktifkan seluruh fitur sistem.' => 'Email verification is required to ensure account security and unlock all system features.',
+
+    'Temukan Berbagai Kegiatan Kampus' => 'Temukan Berbagai Kegiatan Kampus',
+
+    'Dari seminar, workshop, kompetisi, hingga kegiatan organisasi, semuanya dapat ditemukan dan dikelola dalam satu platform.' => 'Dari seminar, workshop, kompetisi, hingga kegiatan organisasi, semuanya dapat ditemukan dan dikelola dalam satu platform.',
+
 ];

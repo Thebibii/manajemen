@@ -9,7 +9,7 @@
         <div class="grid grid-cols-2 md:grid-cols-3 items-center h-16">
 
             <!-- Logo -->
-            <a href="{{ route('welcome') }}" class="font-outfit text-2xl font-bold tracking-tight text-white">
+            <a href="{{ route('welcome') }}" class="font-outfit text-xl sm:text-2xl font-bold tracking-tight text-white">
 
                 EVENT<span class="text-brand-100">KAMPUS</span>
 
@@ -127,14 +127,25 @@
             </a>
         @else
             <!-- Tampilan saat mahasiswa.events TIDAK AKTIF -->
-            <a href="{{ $eventsRoute }}"
-                class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
-                <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
-                    <path fill-rule="evenodd"
-                        d="M20.874 14.611c.504.572 1.126 1.453 1.126 2.535A2.854 2.854 0 0 1 19.146 20H4.854A2.854 2.854 0 0 1 2 17.146c0-1.082.623-1.963 1.126-2.535C3.52 14.165 4 13.357 4 12s-.481-2.165-.874-2.611C2.623 8.817 2 7.936 2 6.854A2.854 2.854 0 0 1 4.854 4h14.292A2.854 2.854 0 0 1 22 6.854c0 1.082-.622 1.963-1.126 2.535C20.48 9.835 20 10.643 20 12s.481 2.165.874 2.611m-6.167-5.318a1 1 0 0 0-1.414 0l-4 4a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414"
-                        clip-rule="evenodd"></path>
-                </svg>
-            </a>
+            @auth
+                <a href="{{ $eventsRoute }}"
+                    class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
+                    <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
+                        <path fill-rule="evenodd"
+                            d="M20.874 14.611c.504.572 1.126 1.453 1.126 2.535A2.854 2.854 0 0 1 19.146 20H4.854A2.854 2.854 0 0 1 2 17.146c0-1.082.623-1.963 1.126-2.535C3.52 14.165 4 13.357 4 12s-.481-2.165-.874-2.611C2.623 8.817 2 7.936 2 6.854A2.854 2.854 0 0 1 4.854 4h14.292A2.854 2.854 0 0 1 22 6.854c0 1.082-.622 1.963-1.126 2.535C20.48 9.835 20 10.643 20 12s.481 2.165.874 2.611m-6.167-5.318a1 1 0 0 0-1.414 0l-4 4a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            @else
+                <a href="{{ route('login') }}"
+                    class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
+                    <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
+                        <path fill-rule="evenodd"
+                            d="M20.874 14.611c.504.572 1.126 1.453 1.126 2.535A2.854 2.854 0 0 1 19.146 20H4.854A2.854 2.854 0 0 1 2 17.146c0-1.082.623-1.963 1.126-2.535C3.52 14.165 4 13.357 4 12s-.481-2.165-.874-2.611C2.623 8.817 2 7.936 2 6.854A2.854 2.854 0 0 1 4.854 4h14.292A2.854 2.854 0 0 1 22 6.854c0 1.082-.622 1.963-1.126 2.535C20.48 9.835 20 10.643 20 12s.481 2.165.874 2.611m-6.167-5.318a1 1 0 0 0-1.414 0l-4 4a1 1 0 1 0 1.414 1.414l4-4a1 1 0 0 0 0-1.414"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </a>
+            @endauth
         @endif
         @if (request()->routeIs('mahasiswa.profile'))
             <a href="{{ $profileRoute }}"
@@ -146,13 +157,23 @@
                 <span class="text-theme-sm font-semibold text-brand-600">{{ __('messages.Profile') }}</span>
             </a>
         @else
-            <a href="{{ $profileRoute }}"
-                class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
-                <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
-                    <path
-                        d="M9 14a5 5 0 0 0-5 5 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 5 5 0 0 0-5-5zM12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10" />
-                </svg>
-            </a>
+            @auth
+                <a href="{{ $profileRoute }}"
+                    class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
+                    <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
+                        <path
+                            d="M9 14a5 5 0 0 0-5 5 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 5 5 0 0 0-5-5zM12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10" />
+                    </svg>
+                </a>
+            @else
+                <a href="{{ route('login') }}"
+                    class="flex h-12 w-12 items-center justify-center rounded-full transition-all duration-300 hover:bg-brand-700">
+                    <svg xmlns="http://w3.org" viewBox="0 0 24 24" class="h-6 w-6 fill-brand-100">
+                        <path
+                            d="M9 14a5 5 0 0 0-5 5 3 3 0 0 0 3 3h10a3 3 0 0 0 3-3 5 5 0 0 0-5-5zM12 2a5 5 0 1 0 0 10 5 5 0 0 0 0-10" />
+                    </svg>
+                </a>
+            @endauth
         @endif
 
     </div>

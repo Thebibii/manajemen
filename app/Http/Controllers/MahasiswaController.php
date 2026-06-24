@@ -11,7 +11,8 @@ class MahasiswaController extends Controller
     public function profile()
     {
         $user = auth()->user();
-        return view('pages.mahasiswa.profile', compact('user'));
+        $title = __('messages.Profile');
+        return view('pages.mahasiswa.profile', compact('user', 'title'));
     }
 
     public function events()
@@ -25,7 +26,7 @@ class MahasiswaController extends Controller
         }
 
         $eventSaya = $query->get();
-
-        return view('pages.mahasiswa.events', compact('eventSaya'));
+        $title = __('messages.Event Saya');
+        return view('pages.mahasiswa.events', compact('eventSaya', 'title'));
     }
 }

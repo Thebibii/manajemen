@@ -29,7 +29,9 @@ class EventController extends Controller
         };
         $events = $query->paginate(5)->withQueryString();
 
-        return view('pages.panitia.events.index', compact('events'));
+        $title = __('messages.Event Saya');
+
+        return view('pages.panitia.events.index', compact('events', 'title'));
     }
 
     public function show(Event $event)
@@ -43,13 +45,14 @@ class EventController extends Controller
             'registrations as diterima_count' => fn($q) => $q->where('status', 'diterima'),
             'registrations as ditolak_count'  => fn($q) => $q->where('status', 'ditolak'),
         ]);
-
-        return view('pages.panitia.events.show', compact('event'));
+        $title = __('messages.Detail Event');
+        return view('pages.panitia.events.show', compact('event', 'title'));
     }
 
     public function create()
     {
-        return view('pages.panitia.events.create');
+        $title = __('messages.Tambah Event');
+        return view('pages.panitia.events.create', compact('title'));
     }
 
     public function store(Request $request)
@@ -77,7 +80,8 @@ class EventController extends Controller
     public function edit(Event $event)
     {
         $this->authorize('update', $event);
-        return view('pages.panitia.events.edit', compact('event'));
+        $title = __('messages.Edit Event');
+        return view('pages.panitia.events.edit', compact('event', 'title'));
     }
 
     public function update(Request $request, Event $event)
@@ -106,7 +110,7 @@ class EventController extends Controller
 
         $event->update($data);
 
-        return redirect()->route('panitia.events.index')->with('success', __('messages.Event berhasil diperbarui'));
+        return redirect()->route('panitia.events.index')->with('success', __('messages.Event berhasil diperbarui.'));
     }
 
     public function destroy(Event $event)
