@@ -39,10 +39,10 @@
 
 </head>
 
-<body x-data class="min-h-screen flex flex-col">
+<body x-data="{ 'loaded': true }" class="min-h-screen flex flex-col">
 
     {{-- preloader --}}
-    {{-- <x-common.preloader /> --}}
+    <x-common.preloader />
     {{-- preloader end --}}
 
     {{-- <div class="min-h-screen xl:flex"> --}}

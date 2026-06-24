@@ -38,10 +38,10 @@
     </script>
 </head>
 
-<body x-data>
+<body x-data="{ 'loaded': true }">
 
     {{-- preloader --}}
-    {{-- <x-common.preloader /> --}}
+    <x-common.preloader />
     {{-- preloader end --}}
 
     {{-- <div class="min-h-screen xl:flex"> --}}
