@@ -163,6 +163,10 @@ return [
     "Reset Password" => "Reset Kata Sandi",
     "This is a secure area of the application. Please confirm your password before continuing." => "Ini adalah area aman dalam aplikasi. Harap konfirmasi kata sandi Anda sebelum melanjutkan.",
     "Confirm" => "Konfirmasi",
+    "Enter your name" => "Masukkan nama anda",
+    "Enter your password" => "Masukkan kata sandi anda",
+    "Re-enter your password" => "Masukkan ulang kata sandi anda",
+
 
     //teks panjang
     "home_tp" => "Platform tiket konser untuk anak seni, komunitas kreatif, dan pecinta musik live di Indonesia. Temukan event terbaik, beli tiket dengan mudah, dan nikmati pengalaman konser tanpa ribet.",

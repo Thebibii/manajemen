@@ -165,6 +165,9 @@ return [
     "Reset Password" => "Reset Password",
     "This is a secure area of the application. Please confirm your password before continuing." => "This is a secure area of the application. Please confirm your password before continuing.",
     "Confirm" => "Confirm",
+    "Enter your name" => "Enter your name",
+    "Enter your password" => "Enter your password",
+    "Re-enter your password" => "Re-enter your password",
 
     //teks panjang
     "tp2" => "Find the best concerts, festivals, and music shows that will take place soon.",

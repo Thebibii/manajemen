@@ -91,7 +91,7 @@
                                         {{ __('messages.Name') }}<span class="text-error-500">*</span>
                                     </label>
                                     <input type="text" id="name" name="name" value="{{ old('name') }}"
-                                        autofocus autocomplete="name" placeholder="Enter your name"
+                                        autofocus autocomplete="name" placeholder="{{__('messages.Enter your name')}}"
                                         class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
                                 </div>
@@ -101,7 +101,7 @@
                                         Email<span class="text-error-500">*</span>
                                     </label>
                                     <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                        autocomplete="username" placeholder="Enter your email"
+                                        autocomplete="username" placeholder="{{__('messages.Enter your email')}}"
                                         class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent px-4 py-2.5 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                                 </div>
@@ -112,7 +112,7 @@
                                     </label>
                                     <div x-data="{ showPassword: false }" class="relative">
                                         <input :type="showPassword ? 'text' : 'password'" id="password" name="password"
-                                            autocomplete="new-password" placeholder="Enter your password"
+                                            autocomplete="new-password" placeholder="{{__('messages.Enter your password')}}"
                                             class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                         <span @click="showPassword = !showPassword"
                                             class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer text-gray-500">
@@ -141,7 +141,7 @@
                                     <div x-data="{ showPasswordConfirmation: false }" class="relative">
                                         <input :type="showPasswordConfirmation ? 'text' : 'password'"
                                             id="password_confirmation" name="password_confirmation"
-                                            autocomplete="new-password" placeholder="Re-enter your password"
+                                            autocomplete="new-password" placeholder="{{__('messages.Re-enter your password')}}"
                                             class=" shadow-theme-xs focus:border-brand-300 focus:ring-brand-500/10 h-11 w-full rounded-lg border border-gray-300 bg-transparent py-2.5 pr-11 pl-4 text-sm text-gray-800 placeholder:text-gray-400 focus:ring-3 focus:outline-hidden" />
                                         <span @click="showPasswordConfirmation = !showPasswordConfirmation"
                                             class="absolute top-1/2 right-4 z-30 -translate-y-1/2 cursor-pointer text-gray-500">
