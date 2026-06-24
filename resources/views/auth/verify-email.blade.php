@@ -74,7 +74,7 @@
                     <div class="mt-5">
                         <p class="text-center text-sm text-gray-500">
                             {{ __('messages.Tidak menemukan email?') }}
-                            Periksa folder <span class="font-medium">Spam</span> {{ __('messages.atau') }}
+                            {{__('messages.Periksa folder')}} <span class="font-medium">Spam</span> {{ __('messages.atau') }}
                             <span class="font-medium">Promosi</span>.
                         </p>
                     </div>
@@ -92,9 +92,9 @@
                             Event Kampus
                         </a>
                         <p class="text-center text-gray-400">
-                            <<<<<<< HEAD {{ __('messages.Temukan dan Kelola') }}
-                                {{ __('messages.Kegiatan Kampus dengan Mudah') }}======={{ __('messages.tp7') }}>>>>>>>
-                                rozi
+                            {{ __('messages.Temukan dan Kelola') }}
+                            {{ __('messages.Kegiatan Kampus dengan Mudah') }}
+                            {{ __('messages.tp7') }}
                         </p>
                     </div>
                 </div>
