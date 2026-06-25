@@ -2,7 +2,7 @@
     x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
     x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0"
     x-transition:leave-end="opacity-0 translate-y-2"
-    class="fixed top-4 right-6 z-99999 w-full max-w-sm rounded-xl border border-gray-200 border-l-4 bg-white p-4 shadow-theme-md"
+    class="fixed top-4 right-6 z-99999 w-full max-w-xs sm:max-w-sm rounded-xl border border-gray-200 border-l-4 bg-white p-4 shadow-theme-md"
     :class="{
         'border-l-success-500': $store.notification.type === 'success',
         'border-l-blue-light-500': $store.notification.type === 'info',
